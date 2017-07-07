@@ -10,9 +10,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="wrap">
-        <header class="header">
-            <div class="navbar">
+    <div class="wrapper">
+        <a class="btn-jump-to-content" href="#main-content">Skip Navigation</a>
+        <header class="header" id="header">
+            <div class="container">
                 <a href="<?php echo home_url(); ?>" class="logo">
                     <?php
                         if ( get_field('logo', 'option') ) {
@@ -32,29 +33,27 @@
                 </div>
 
                 <?php wp_nav_menu(array(
-                    'theme_location'  => 'main-nav',
-                    'menu'            => 'Main Navigation',
+                    'theme_location'  => 'main-menu',
+                    'menu'            => 'Main Menu',
                     'container'       => 'nav',
                     'container_class' => 'main-nav desktop',
                     'container_id'    => false,
                     'items_wrap'      => '<ul>%3$s</ul>',
-                    'depth'           => 1
+                    'depth'           => 2
                 )); ?>
 
                 <div class="mobile-menu-wrap">
                     <div class="mobile-menu-box">
                         <?php wp_nav_menu(array(
-                            'theme_location'  => 'main-nav',
-                            'menu'            => 'Main Navigation',
+                            'theme_location'  => 'main-menu',
+                            'menu'            => 'Main Menu',
                             'container'       => false,
                             'menu_class'      => 'mobile-menu',
                             'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
-                            'depth'           => 1
+                            'depth'           => 2
                         )); ?>
                     </div>
                     <div class="mobile-menu-overlay"></div>
                 </div>
             </div>
-
-            </section>
         </header>

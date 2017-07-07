@@ -1,6 +1,8 @@
 /*fonts*/
-$font-main: 'Roboto', Arial, sans-serif;
-$font-heading: 'Patua One', 'Roboto', Arial, sans-serif;
+$font-main: 'Lato', Arial, sans-serif;
+$font-pt: 'PT Sans', $font-main;
+$font-sfns: 'SFNS Display', $font-main;
+$font-heading: 'Hikou Rough', $font-main;
 
 /*fonts-weight*/
 $normal: 400;
@@ -20,9 +22,11 @@ $line-height-heading: 1;
 
 /*colors*/
 $white: #ffffff;
-$color-text: #333333;
+$black: #000000;
+$color-text: #37546D;
 $color-text2: #313b43;
-$color-text3: #ff614c;
+$color-text3: #DB9C39;
+$color-nav: #00334E;
 $color-bg1: $white;
 $color-bg2: #ff4948;
 $color-bg3: #1d4d94;

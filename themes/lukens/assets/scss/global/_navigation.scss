@@ -1,0 +1,147 @@
+/*--------------------------------------NAV-----------------------------------------*/
+.main-nav {
+
+}
+.main-nav {
+  float: right;
+  padding-top: 16px;
+  margin-right: 15px;
+  > ul {
+    text-align: center;
+    > li {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      a {
+        position: relative;
+        display: inline-block;
+        padding: 5px 14px;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 14px;
+        font-weight: $bold;
+        @include css3-prefix('transition', '0.2s');
+        .home & {
+          color: $color-nav;
+        }
+        &:hover,
+        &:focus {
+          color: $color-text3;
+        }
+      }
+    }
+  }
+  a:hover,
+  .current-menu-item > a,
+  .current-menu-ancestor > a {
+    text-decoration: none;
+  }
+}
+.mobile-menu {
+  padding-bottom: 20px;
+  > li {
+    position: relative;
+    display: block;
+    a {
+      position: relative;
+      display: block;
+      text-transform: uppercase;
+      padding: 10px 25px 8px;
+      color: $color-nav;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  > .current-menu-item > a,
+  > li > a:hover {
+    color: $color-text3;
+    text-decoration: none;
+  }
+  .expanded:after {
+    content: "\f107";
+    font-family: FontAwesome;
+    font-size: 16px;
+    line-height: 1;
+    text-indent: 0;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 20px;
+    margin-top: -8px;
+    right: 10px;
+    display: inline-block;
+
+  }
+  &:hover:after {
+    color: #0097de;
+  }
+  &.open:after {
+    content: "\f106";
+  }
+}
+.header-btn-box {
+  overflow: hidden;
+  float: right;
+  margin-top: 2px;
+}
+
+.main-nav .sub-menu {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  left: -25px;
+  min-width: 100%;
+  padding: 10px 0;
+  background-color: $white;
+  @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
+  opacity: 0;
+  visibility: hidden;
+  text-align: left;
+  @include css3-prefix('transition', 'all .2s ease-in-out');
+}
+
+.main-nav {
+  ul {
+    > li:hover .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      margin: 0;
+    }
+  }
+  .sub-menu {
+    li {
+      display: block;
+      min-width: 220px;
+    }
+    a {
+      display: block;
+      padding: 5px 20px 5px 25px;
+      text-transform: uppercase;
+    }
+    a:hover,
+    .current-menu-item a {
+      text-decoration: none;
+    }
+  }
+}
+
+.main-nav .sub-menu .sub-menu,
+.mobile-menu .sub-menu .sub-menu {
+  display: none;
+}
+
+.mobile-menu .sub-menu {
+  display: block;
+  padding-left: 20px;
+  a {
+    font-size: 14px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .sub-menu  {
+    padding-left: 45px;
+  }
+}

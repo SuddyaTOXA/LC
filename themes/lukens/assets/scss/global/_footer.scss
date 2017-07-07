@@ -1,0 +1,116 @@
+#footer {
+  overflow: hidden;
+  position: relative;
+  background-color: #2A425A;
+  padding-top: 135px;
+  padding-bottom: 58px;
+}
+  .footer-logo {
+    display: block;
+    max-width: 287px;
+    margin: 0 auto 24px;
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+.footer-menu {
+  margin-bottom: 40px;
+  text-align: center;
+  > li {
+    position: relative;
+    display: inline-block;
+    a {
+      position: relative;
+      text-transform: uppercase;
+      padding: 8px 12px 9px;
+      color: $white;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      word-spacing: 0.2em;
+    }
+  }
+  > .current-menu-item > a,
+  > li > a:hover,
+  > li > a:focus {
+    color: $color-text3;
+    text-decoration: none;
+  }
+}
+.address-list {
+  max-width: 700px;
+  margin: 0 auto 17px;
+  > li {
+    display: inline-block;
+    width: 33%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    vertical-align: top;
+  }
+}
+  .address-box {
+    max-width: 190px;
+    margin: 0 auto;
+    font-family: $font-pt;
+    font-size: 11px;
+    color: $white;
+    letter-spacing: 0.1em;
+    word-spacing: -.08em;
+    text-align: center;
+    * {
+      margin-bottom: -1px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    p {
+    }
+    a {
+      color: $white;
+      &:hover,
+      &:focus {
+        color: $color-text3;
+        text-decoration: none;
+      }
+    }
+  }
+  .footer-bottom-box {
+    overflow: hidden;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+    .copyright {
+      float: left;
+      padding-top: 3px;
+      color: $white;
+      font-family: $font-pt;
+      font-size: 12px;
+      letter-spacing: .05em;
+      word-spacing: -0.02em;
+    }
+    .footer-social-list {
+      float: right;
+      margin-right: 8px;
+      > li {
+        display: inline-block;
+        a {
+          padding: 2px 8px;
+          cursor: pointer;
+          i {
+            font-size: 15px;
+            color: #939FAB;
+            @include transition($transition-other);
+          }
+          &:hover,
+          &:focus {
+            i {
+              color: $color-text3;
+            }
+          }
+        }
+      }
+    }
+
+

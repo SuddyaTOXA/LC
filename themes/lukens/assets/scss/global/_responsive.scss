@@ -47,7 +47,30 @@
 }
 
 @media all and (max-width: 767px) {
-
+  .wrapper {
+    margin-top: 65px;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .desktop {
+    display: none !important;
+  }
+  .mobile-menu-wrap,
+  .mobile-category-toggle,
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .header,
+  .header.scrolling {
+    min-height: 65px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+  .logo {
+    margin-top: 15px;
+    max-width: 197px;
+  }
 }
 
 @media (max-width: 767px) and (max-height: 480px) {

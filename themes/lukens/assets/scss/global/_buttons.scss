@@ -1,0 +1,85 @@
+.btn-go-top,
+a.btn-go-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 30px;
+  height: 55px;
+  text-align: center;
+  background-color: $white;
+  background-color: rgba(255, 255, 255, .2);
+  @include css3-prefix('transform', 'translate( -50%, 0)');
+  .icon {
+    color: $white;
+    @include transition($transition-other);
+    &:before {
+      font-size: 10px;
+      @include transition($transition-other);
+    }
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, .7);
+    .icon {
+      &:before {
+        color: $color-text3;
+      }
+    }
+  }
+}
+.btn-political a {
+  color: $white;
+  border: 1px solid $white;
+  &:hover,
+  &:focus {
+    color: $color-text3;
+    background-color: $white;
+  }
+  .home & {
+    color: $color-nav;
+    border-color: transparent;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+  #footer & {
+    margin-left: 16px;
+    padding: 8px 29px 9px;
+    color: $white;
+    border-color: $white;
+    border-color: rgba(255, 255, 255, 0.3);
+    &:hover,
+    &:focus {
+      color: $color-text3;
+      background-color: $white;
+      border-color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+a.btn-jump-to-content,
+.btn-jump-to-content {
+    position: absolute;
+    display: block;
+    width: 300px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 10px 15px;
+    font-family: $font-sfns;
+    font-size: 20px;
+    color: $color-text;
+    text-align: center;
+    background: $white;
+    z-index: -9999;
+    @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
+    opacity: 0;
+  &:focus {
+    opacity: 1;
+    z-index: 9999;
+    text-decoration: none;
+  }
+}
