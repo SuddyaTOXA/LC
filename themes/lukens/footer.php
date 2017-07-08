@@ -2,7 +2,7 @@
 
     </div><!--/wrap-->
         <footer class="footer" id="footer">
-        <a class="btn-go-top" href="#main-content">
+        <a class="btn-go-top smooth-scroll" href="#main-content">
             <span class="icon icon-icon-chevron-up"></span>
         </a>
         <div class="container">

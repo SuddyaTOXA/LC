@@ -11,7 +11,7 @@
 
 <body <?php body_class(); ?>>
     <div class="wrapper">
-        <a class="btn-jump-to-content" href="#main-content">Skip Navigation</a>
+        <a class="btn-jump-to-content smooth-scroll" href="#main-content">Skip Navigation</a>
         <header class="header" id="header">
             <div class="container">
                 <a href="<?php echo home_url(); ?>" class="logo">

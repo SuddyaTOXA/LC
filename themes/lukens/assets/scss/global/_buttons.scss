@@ -1,3 +1,54 @@
+a.btn, .btn {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  min-width: 160px;
+  margin: 0;
+  padding: 18px 29px 17px;
+  background-color: $color-bg2;
+  background-color: rgba(209, 139, 44, 1);
+  border: 1px solid #d18b2c;
+  font-family: $font-main;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: .02em;
+  font-weight: 700;
+  color: $white;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include border-radius($radius-small);
+  &:hover,
+  &:focus {
+    border-color: rgba(209, 139, 44, .7);
+    background-color: rgba(209, 139, 44, .7);
+  }
+}
+a.btn-blue,
+.btn-blue {
+  background-color: $color-bg3;
+  background-color: rgba(42, 66, 90, 1);
+  border-color: $color-bg3;
+  &:hover,
+  &:focus {
+    border-color: rgba(42, 66, 90, .7);
+    background-color: rgba(42, 66, 90, .7);
+  }
+}
+a.btn-green-inverse,
+.btn-green-inverse{
+  padding-left: 34px;
+  padding-right: 34px;
+  border-color: #79a22e;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    background-color: #79a22e;
+    opacity: 1;
+  }
+}
+
 .btn-go-top,
 a.btn-go-top {
   position: absolute;
@@ -29,6 +80,40 @@ a.btn-go-top {
     }
   }
 }
+a.btn-go-bottom,
+.btn-go-bottom {
+  position: absolute;
+  z-index: 15;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 30px;
+  height: 55px;
+  text-align: center;
+  background-color: #2B4259;
+  @include css3-prefix('transform', 'translate( -50%, 0)');
+  .icon {
+    position: relative;
+    top: 24px;
+    left: 1px;
+    color: $white;
+    @include transition($transition-other);
+    &:before {
+      font-size: 10px;
+      @include transition($transition-other);
+    }
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    .icon {
+      &:before {
+        color: $color-text3;
+      }
+    }
+  }
+}
+
 .btn-political a {
   color: $white;
   border: 1px solid $white;
