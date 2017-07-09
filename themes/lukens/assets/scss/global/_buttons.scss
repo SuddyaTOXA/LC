@@ -12,7 +12,7 @@ a.btn, .btn {
   font-size: 14px;
   line-height: 1;
   letter-spacing: .02em;
-  font-weight: 700;
+  font-weight: 900;
   color: $white;
   text-align: center;
   cursor: pointer;
@@ -23,6 +23,17 @@ a.btn, .btn {
   &:focus {
     border-color: rgba(209, 139, 44, .7);
     background-color: rgba(209, 139, 44, .7);
+  }
+  .icon {
+    padding-left: 11px;
+    color: $color-bg2;
+    @include transition($transition-link);
+  }
+  .icon-icon_glasses {
+    font-size: 13px;
+  }
+  .icon-icon_paperplane_green {
+    font-size: 20px;
   }
 }
 a.btn-blue,
@@ -44,11 +55,29 @@ a.btn-green-inverse,
   background-color: transparent;
   &:hover,
   &:focus {
+    border-color: #79a22e;
     background-color: #79a22e;
     opacity: 1;
   }
 }
-
+a.btn-grey-inverse,
+.btn-grey-inverse {
+  padding-left: 27px;
+  padding-right: 27px;
+  border-color: #5e6666;
+  color: #5e6666;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: #5e6666;
+    background-color: #5e6666;
+    opacity: 1;
+    .icon {
+      color: $white;
+    }
+  }
+}
 .btn-go-top,
 a.btn-go-top {
   position: absolute;
@@ -166,5 +195,25 @@ a.btn-jump-to-content,
     opacity: 1;
     z-index: 9999;
     text-decoration: none;
+  }
+}
+
+a.btn-submit,
+.btn-submit {
+  padding-left: 27px;
+  padding-right: 55px;
+  min-width: auto;
+  border-color: #5e6666;
+  color: #5e6666;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: #5e6666;
+    background-color: #5e6666;
+    opacity: 1;
+    .icon {
+      color: $white;
+    }
   }
 }

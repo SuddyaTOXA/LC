@@ -14,7 +14,12 @@
 
     $the_latest_title = get_field('the_latest_title');
     $the_latest_content = get_field('the_latest_content');
+    $the_latest_button = get_field('the_latest_button');
     $the_latest_bg    = get_field('the_latest_bg');
+
+    $contact_title = get_field('contact_title');
+    $contact_content = get_field('contact_content');
+    $form = get_field('select_contact_form');
 ?>
 
     <?php if ($hero_image) { ?>
@@ -112,27 +117,46 @@
     <section class="section-the-latest" style="background-image: url(<?= $the_latest_bg ?>)">
         <div class="container">
             <div class="left-box">
-                <div class="table-box">
-                    <div class="table-cell-box">
-                        <div class="table-inner-box">
-                            <?php
-                            if ($the_latest_title) {
-                                echo '<h2 class="section-title line">'. $the_latest_title .'</h2>';
-                            }
-                            if ($the_latest_content) {
-                                echo '<div class="content-wrap"><div class="content">'. $the_latest_content .'</div></div>';
-                            }
-                            ?>
-                        </div>
-                    </div>
+                <div class="table-inner-box">
+                    <?php
+                        if ($the_latest_title) {
+                            echo '<h2 class="section-title line">'. $the_latest_title .'</h2>';
+                        }
+                        if ($the_latest_content) {
+                            echo '<div class="content-wrap"><div class="content">'. $the_latest_content .'</div></div>';
+                        }
+                    ?>
+                    <?php if($the_latest_button && is_array($the_latest_button)) { ?>
+                        <?php foreach ($the_latest_button as $button) { ?>
+                            <a href="<?= $button['link'] ?>" class="btn btn-grey-inverse"><?= $button['title'] ?><span class="icon <?= $button['icon'] ?>"></span></a>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
-            <div class="right-box"></div>
+            <div class="right-box">
+                <div style="height: 720px;"></div>
+            </div>
         </div>
     </section>
 
     <section class="section-contact-us">
-        <div class="container"></div>
+        <div class="container">
+            <?php
+                if ($contact_title) {
+                    echo '<h2 class="section-title line">'. $contact_title .'</h2>';
+                }
+                if ($contact_content) {
+                    echo '<div class="content-wrap"><div class="content">'. $contact_content .'</div></div>';
+                }
+                if (is_array($form) && is_object($form[0])) {
+                    echo "<div class='form-wrap'>";
+                    echo do_shortcode('[contact-form-7 id="'.$form[0]->ID.'" title="'.$form[0]->post_title.'"]');
+                    echo "</div>";
+                }
+            ?>
+
+        </div>
     </section>
 
 <?php get_footer(); ?>
+
