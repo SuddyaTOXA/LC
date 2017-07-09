@@ -24,6 +24,9 @@
         .home & {
           color: $color-nav;
         }
+        .scrolling & {
+          color: $color-nav;
+        }
         &:hover,
         &:focus {
           color: $color-text3;
@@ -94,12 +97,19 @@
   left: -25px;
   min-width: 100%;
   padding: 10px 0;
-  background-color: $white;
-  @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
+  background-color: transparent;
   opacity: 0;
   visibility: hidden;
   text-align: left;
   @include css3-prefix('transition', 'all .2s ease-in-out');
+  .home & {
+    background-color: $white;
+    @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
+  }
+  .scrolling & {
+    background-color: $white;
+    @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
+  }
 }
 
 .main-nav {

@@ -17,12 +17,17 @@
     $the_latest_button = get_field('the_latest_button');
     $the_latest_bg    = get_field('the_latest_bg');
 
+    $our_clients_title = get_field('our_clients_title');
+    $our_clients_content = get_field('our_clients_content');
+    $our_clients = get_field('our_clients');
+
     $contact_title = get_field('contact_title');
     $contact_content = get_field('contact_content');
     $form = get_field('select_contact_form');
+    $contact_bg = get_field('contact_bg');
 ?>
 
-    <?php if ($hero_image) { ?>
+    <?php if ($hero_image || $hero_title || $hero_sub_title || $hero_buttons) { ?>
         <section class="section-hero vertical-align" id="main-content">
             <div class="container">
                 <div class="container-box">
@@ -37,24 +42,25 @@
                             <?php } ?>
                         </h1>
                         <?php if($hero_buttons && is_array($hero_buttons)) { ?>
-                        <div class="hero-btn-box">
-                            <?php foreach ($hero_buttons as $button) { ?>
-                                <a href="<?= $button['link'] ?>" class="btn <?= $button['color'] ?>"><?= $button['title'] ?></a>
-                            <?php } ?>
-                        </div>
+                            <div class="hero-btn-box">
+                                <?php foreach ($hero_buttons as $button) {
+                                    echo '<a href="'. esc_url($button['link']) .'" title="'. esc_attr($button['title']) .'" class="btn '. strip_tags($button['color']) .'">'. $button['title'] .'</a>';
+                                 } ?>
+                            </div>
                         <?php } ?>
                     </div>
                     <?php } ?>
                 </div>
+                <img src="<?= $hero_image ?>" alt="<?php echo strip_tags($hero_title ); ?>">
             </div>
-            <img src="<?= $hero_image ?>" alt="<?php echo strip_tags($hero_title ); ?>">
             <a class="btn-go-bottom smooth-scroll" href="#our-services">
                 <span class="icon icon-icon_chevron_white"></span>
             </a>
         </section>
     <?php } ?>
 
-    <section class="section-our-services" id="our-services">
+    <?php if ($our_services_title || $our_services_content || $our_services_bottom_text) { ?>
+        <section class="section-our-services" id="our-services">
         <div class="container">
             <?php
                 if ($our_services_title) {
@@ -86,60 +92,117 @@
             ?>
         </div>
     </section>
+    <?php } ?>
 
-    <section class="section-home-case-studies inverse">
-        <div class="container">
-            <?php
-                if ($case_studies_title) {
-                    echo '<h2 class="section-title line">'. $case_studies_title .'</h2>';
-                }
-                if ($case_studies_content) {
-                    echo '<div class="content-wrap"><div class="content">'. $case_studies_content .'</div></div>';
-                }
-            ?>
-
-            <div class="recent-case-post">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
-            <?php
-                if ($case_studies_button && is_array($case_studies_button)) {
-                    foreach ($case_studies_button as $button) {
-                        echo '<a href="'. $button['link'] .'" class="btn btn-green-inverse">'. $button['title'] .'</a>';
+    <?php if ($case_studies_title || $case_studies_content || $case_studies_button ) { ?>
+        <section class="section-home-case-studies inverse">
+            <div class="container">
+                <?php
+                    if ($case_studies_title) {
+                        echo '<h2 class="section-title line">'. $case_studies_title .'</h2>';
                     }
-                }
-            ?>
+                    if ($case_studies_content) {
+                        echo '<div class="content-wrap"><div class="content">'. $case_studies_content .'</div></div>';
+                    }
+                ?>
 
-        </div>
-    </section>
+                <div class="recent-case-post">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                <?php
+                    if ($case_studies_button && is_array($case_studies_button)) {
+                        foreach ($case_studies_button as $button) {
+                            echo '<a href="'. esc_url($button['link']) .'" title="'. esc_attr($button['title']) .'" class="btn btn-green-inverse">'. $button['title'] .'</a>';
+                        }
+                    }
+                ?>
+            </div>
+        </section>
+    <?php } ?>
 
-    <section class="section-the-latest" style="background-image: url(<?= $the_latest_bg ?>)">
-        <div class="container">
-            <div class="left-box">
-                <div class="table-inner-box">
-                    <?php
-                        if ($the_latest_title) {
-                            echo '<h2 class="section-title line">'. $the_latest_title .'</h2>';
-                        }
-                        if ($the_latest_content) {
-                            echo '<div class="content-wrap"><div class="content">'. $the_latest_content .'</div></div>';
-                        }
-                    ?>
-                    <?php if($the_latest_button && is_array($the_latest_button)) { ?>
-                        <?php foreach ($the_latest_button as $button) { ?>
-                            <a href="<?= $button['link'] ?>" class="btn btn-grey-inverse"><?= $button['title'] ?><span class="icon <?= $button['icon'] ?>"></span></a>
-                        <?php } ?>
-                    <?php } ?>
+    <?php if ($the_latest_title || $the_latest_content || $the_latest_button || $the_latest_bg) { ?>
+        <section class="section-the-latest" style="background-image: url(<?= $the_latest_bg ?>)">
+            <div class="container">
+                <div class="left-box">
+                    <div class="table-inner-box">
+                        <?php
+                            if ($the_latest_title) {
+                                echo '<h2 class="section-title line">'. $the_latest_title .'</h2>';
+                            }
+                            if ($the_latest_content) {
+                                echo '<div class="content-wrap"><div class="content">'. $the_latest_content .'</div></div>';
+                            }
+                             if($the_latest_button && is_array($the_latest_button)) {
+                                foreach ($the_latest_button as $button) {
+                                    echo '<a href="'. esc_url($button['link']) .'" title="'. esc_attr($button['title']) .'" class="btn btn-grey-inverse">'. $button['title'] .'<span class="icon '. strip_tags($button['icon']) .'"></span></a>';
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class="right-box">
+                    <div class="table-inner-box" style="height: 720px;"></div>
                 </div>
             </div>
-            <div class="right-box">
-                <div style="height: 720px;"></div>
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
 
-    <section class="section-contact-us">
+    <?php if ($our_clients_title || $our_clients_content || $our_clients) { ?>
+        <section class="section-our-clients inverse">
+            <div class="container">
+                <div class="left-box">
+                    <div class="table-inner-box">
+                       <?php
+                            if($our_clients && is_array($our_clients)) {
+                                echo '<ul class="our-clients-logo-list">';
+                                    foreach ($our_clients as $client) {
+                                        echo '<li>';
+                                                 if (!empty($client['link'])) {
+                                                    echo '<a href="'. esc_url($client['link']) .'" title="'. esc_attr($client['title']) .'" target="_blank">
+                                                                <img src="'. $client['logo'] .'" alt="'. esc_attr($client['title']) .'">
+                                                          </a>';
+                                                 }   else {
+                                                     echo '<img src="'. $client['logo'] .'" alt="'. esc_attr($client['title']) .'">';
+                                                 }
+                                           echo '</li>';
+                                    }
+                                echo '</ul>';
+                           }
+                       ?>
+                    </div>
+                </div>
+                <div class="right-box">
+                    <div class="table-inner-box">
+                        <?php
+                            if ($our_clients_title) {
+                                echo '<h2 class="section-title line">'. $our_clients_title .'</h2>';
+                            }
+                            if ($our_clients_content) {
+                                echo '<div class="content-wrap"><div class="content">'. $our_clients_content .'</div></div>';
+                            }
+                            if($our_clients && is_array($our_clients)) {
+                                echo '<ul class="our-clients-list">';
+                                foreach ($our_clients as $client) {
+                                    echo '<li>';
+                                        if (!empty($client['link'])) {
+                                            echo '<a href="'. esc_url($client['link']) .'" title="'. esc_attr($client['title']) .'"  target="_blank">'. $client['title'] .'</a>';
+                                        } else {
+                                            echo '<span>'. $client['title'] .'</span>';
+                                        }
+                                    echo '</li>';
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php } ?>
+
+    <?php if($contact_title || $contact_content || $form || $contact_bg) { ?>
+    <section class="section-contact-us" style="background-image: url(<?= $contact_bg ?>)">
         <div class="container">
             <?php
                 if ($contact_title) {
@@ -154,9 +217,9 @@
                     echo "</div>";
                 }
             ?>
-
         </div>
     </section>
+<?php } ?>
 
 <?php get_footer(); ?>
 

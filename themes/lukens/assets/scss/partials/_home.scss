@@ -25,6 +25,8 @@
   }
 }
   .hero-box {
+    position: relative;
+    z-index: 10;
     max-width: 520px;
     margin: 0 auto;
     color: $white;
@@ -96,15 +98,23 @@
       opacity: .6;
     }
   }
+  &.left {
+    &:after {
+      left: 15px;
+    }
+  }
 }
 .section-title {
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   display: inline-block;
   font-size: 54px;
   line-height: 1.25;
   letter-spacing: -.01em;
   color: $color-text4;
   text-transform: uppercase;
+  &.left {
+    text-align: left;
+  }
   .inverse & {
     color: $white;
   }
@@ -198,10 +208,20 @@
   padding-bottom: 111px;
   text-align: center;
   @include css3-prefix('background-image', 'radial-gradient(circle 454px at 49.18% 195.32%, rgba(0, 51, 78, 0.6) 0%, rgba(0, 72, 100, 0.99) 100%)');
+  .section-title {
+    margin-bottom: 8px;
+  }
 }
   .recent-case-post {
     height: 430px;
   }
+
+.table-inner-box {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
 
 .section-the-latest {
   overflow: hidden;
@@ -219,16 +239,97 @@
     width: 50%;
     vertical-align: middle;
   }
+  .table-inner-box {
+    max-width: 300px;
+  }
 }
-        .table-inner-box {
-          max-width: 300px;
-          margin: 0 auto;
-          text-align: center;
-        }
 
+.section-our-clients {
+  overflow: hidden;
+  background: rgba(243,243,243,1);
+  background: -moz-linear-gradient(left, rgba(243,243,243,1) 0%, rgba(243,243,243,1) 50%, rgba(121,162,46,1) 51%, rgba(121,162,46,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(243,243,243,1)), color-stop(50%, rgba(243,243,243,1)), color-stop(51%, rgba(121,162,46,1)), color-stop(100%, rgba(121,162,46,1)));
+  background: -webkit-linear-gradient(left, rgba(243,243,243,1) 0%, rgba(243,243,243,1) 50%, rgba(121,162,46,1) 51%, rgba(121,162,46,1) 100%);
+  background: -o-linear-gradient(left, rgba(243,243,243,1) 0%, rgba(243,243,243,1) 50%, rgba(121,162,46,1) 51%, rgba(121,162,46,1) 100%);
+  background: -ms-linear-gradient(left, rgba(243,243,243,1) 0%, rgba(243,243,243,1) 50%, rgba(121,162,46,1) 51%, rgba(121,162,46,1) 100%);
+  background: linear-gradient(to right, rgba(243,243,243,1) 0%, rgba(243,243,243,1) 50%, rgba(121,162,46,1) 51%, rgba(121,162,46,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#79a22e', GradientType=1 );
+  .container {
+    display: table;
+    max-width: 1480px;
+    min-height: 300px;
+  }
+  .section-title {
+    margin-bottom: 2px;
+  }
+  .content-wrap {
+    margin-bottom: 34px;
+  }
+  .table-inner-box {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .left-box,
+  .right-box {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .left-box {
+    width: 66%;
+    background-color: #f3f3f3;
+  }
+  .right-box {
+    width: 34%;
+    background-color: #79a22e;
+    .table-inner-box {
+      max-width: 350px;
+    }
+  }
+}
+  .our-clients-logo-list {
+    margin: 0 20px -97px;
+    text-align: center;
+    > li {
+      display: inline-block;
+      padding: 0 50px;
+      margin-bottom: 97px;
+      vertical-align: middle;
+      img {
+        @include transition($transition-other);
+      }
+      a {
+        &:hover,
+        &:focus {
+          img {
+            opacity: .7;
+          }
+        }
+      }
+    }
+  }
+
+  .our-clients-list {
+    > li {
+      margin-bottom: 6px;
+      font-size: 18px;
+      font-weight: 400;
+      color: $white;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        color: $white;
+        &:hover,
+        &:focus {
+          opacity: .7;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 .section-contact-us {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 98px;
+  padding-bottom: 268px;
   text-align: center;
   .section-title {
     margin-bottom: 2px;
@@ -236,6 +337,7 @@
   .content-wrap {
     margin-bottom: 30px;
   }
+  @include bg(center bottom, initial);
 }
   .form-wrap {
     max-width: 502px;
@@ -269,6 +371,7 @@
     }
   }
 .form-btn-box {
+  clear: both;
   margin-top: 40px;
   text-align: center;
 }

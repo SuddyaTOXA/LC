@@ -24,8 +24,17 @@
                         } else {
                             $logo_url = get_bloginfo('template_url') . '/img/logo.png';
                         }
+                        if ( get_field('logo_light', 'option') ) {
+                            $logo_light_url = get_field('logo_light', 'option');
+                        } elseif ( has_custom_logo() ) {
+                            //$custom_logo = wp_get_attachment_image_src( get_theme_mod('custom_logo'), 'full' );
+                            //$logo_url = $custom_logo[0];
+                        } else {
+                            $logo_light_url = get_bloginfo('template_url') . '/img/logo_white.png';
+                        }
                     ?>
-                    <img src="<?php echo $logo_url; ?>" alt="<?php bloginfo('name'); ?>">
+                    <img src="<?php echo $logo_url; ?>" alt="<?php bloginfo('name'); ?>" class="dark">
+                    <img src="<?php echo $logo_light_url; ?>" alt="<?php bloginfo('name'); ?>" class="light">
                 </a>
 
                 <div class="mobile-menu-toggle">

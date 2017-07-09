@@ -1,0 +1,172 @@
+.section-page-banner {
+  overflow: hidden;
+  position: relative;
+  background-color: #2A425A;
+  img {
+    position: absolute;
+    z-index: 1;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    @include css3-prefix('transform', 'translate(-50%, -50%)');
+  }
+  &.vertical-align {
+    .container {
+      position: relative;
+      z-index: 10;
+      height: 370px;
+      padding-bottom: 0;
+    }
+    .container-box {
+      vertical-align: bottom;
+    }
+  }
+}
+  .banner-box {
+    width: 100%;
+    height: 100%;
+    max-width: 541px;
+    max-height: 228px;
+    margin: 0 auto;
+    padding: 0 10px;
+    background-image: url(../../img/whitebrush-tamed-1.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+    .banner-table {
+      display: table;
+      width: 100%;
+      height: 100%;
+      padding: 70px 70px 0;
+      text-align: center;
+    }
+      .banner-cell {
+        display: table-cell;
+        width: 100%;
+        height: 50px;
+        vertical-align: bottom;
+      }
+        .banner-title {
+            margin-bottom: 8px;
+            display: inline-block;
+            font-size: 54px;
+            line-height: 1.25;
+            letter-spacing: -.01em;
+            color: $color-text4;
+            text-transform: uppercase;
+          &.line {
+            opacity: 1;
+          }
+        }
+        .short-info {
+          display: block;
+          margin-top: -17px;
+          color: #03263d;
+          font-size: 23px;
+          line-height: 1.17;
+          font-style: italic;
+        }
+  .banner-overlay {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #79a22e;
+    opacity: .8;
+  }
+
+.section-contact-page {
+  overflow: hidden;
+  padding-top: 103px;
+  padding-bottom: 60px;
+  .container {
+    max-width: 1260px;
+  }
+  .section-title {
+    margin-bottom: 3px;
+  }
+  .content-wrap {
+    margin-left: 0;
+  }
+  .form-list {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    > li {
+      max-width: 500px;
+    }
+    &.right {
+      padding-left: 10px;
+      padding-right: 1px;
+       > li{
+         width: 500px;
+         float: right;
+         &:before {
+           content: '4';
+         }
+      }
+      textarea.input-style {
+        height: 165px;
+      }
+    }
+  }
+}
+  .form-box {
+    overflow: hidden;
+  }
+  .form-page-wrap {
+    .form-btn-box {
+      margin-top: 70px;
+    }
+  }
+
+.section-location {
+  padding-top: 40px;
+  padding-bottom: 110px;
+  background-color: #f3f3f3;
+  text-align: center;
+  .container {
+    max-width: 1360px;
+  }
+}
+  .location-list {
+    margin: 33px -10px -20px;
+    > li {
+      display: inline-block;
+      width: 33%;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      vertical-align: top;
+    }
+  }
+    .location-box {
+      max-width: 310px;
+      margin: 0 auto;
+      text-align: left;
+    }
+      .location-title {
+        margin-bottom: 8px;
+        font-family: $font-main;
+        font-size: 35px;
+        font-weight: 300;
+        line-height: 1.2;
+      }
+      .location {
+        font-size: 22px;
+        line-height: 1.14;
+        p {}
+        a {
+          color: $color-text4;
+          &:hover,
+          &.focus {
+            color: $color-text3;
+            text-decoration: none;
+          }
+        }
+      }
