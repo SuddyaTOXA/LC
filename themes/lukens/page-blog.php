@@ -19,8 +19,8 @@ $content = get_field('content');
                 if ($content) {
                     echo '<div class="content-wrap"><div class="content">'. $content .'</div></div>';
                 }
-            ?>
-            <?php global $wp_query;
+
+                global $wp_query;
 
                 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
                 $args = array(
