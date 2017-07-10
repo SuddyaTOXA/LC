@@ -1,28 +1,32 @@
 <?php get_header(); ?>
 
-    <div class="content-wrap">
-        <div class="content">
+<?php get_template_part('inc/banner'); ?>
 
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <section class="section-blog">
+        <div class="container">
+            <?php if (has_post_thumbnail()) { ?>
+                <div class="blog-img-wrap" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>)">
+                    <?php the_post_thumbnail('full'); ?>
+                </div>
+            <?php } ?>
+            <?php the_title('<h2 class="blog-title">', '</h2>'); ?>
 
-                <article>
+            <div class="blog-info-box">
+                <div class="info-left-box">
+                    <span class="author">By <?php the_author_posts_link(); ?></span>
+                    <span class="post-date"><?php the_date() ?></span>
+                </div>
+                <?php get_template_part('inc/share'); ?>
+            </div>
 
-                    <header>
-                        <?php the_title('<h1>', '</h1>'); ?>
-                    </header>
+            <div class="content">
+                <?php the_content(); ?>
+            </div>
 
-                    <section>
-                        <?php the_content(); ?>
-                    </section>
+        </div>
+    </section>
+<?php endwhile; else: endif; ?>
 
-                </article>
-
-            <?php endwhile; else: endif; ?>
-
-        </div><!--/content-->
-
-        <?php get_sidebar(); ?>
-
-    </div><!--/content-wrap-->
 
 <?php get_footer(); ?>

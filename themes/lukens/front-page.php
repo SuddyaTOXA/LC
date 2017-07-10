@@ -44,7 +44,8 @@
                         <?php if($hero_buttons && is_array($hero_buttons)) { ?>
                             <div class="hero-btn-box">
                                 <?php foreach ($hero_buttons as $button) {
-                                    echo '<a href="'. esc_url($button['link']) .'" title="'. esc_attr($button['title']) .'" class="btn '. strip_tags($button['color']) .'">'. $button['title'] .'</a>';
+                                    $target = $button['target'] ? '_blank' : '_self';
+                                    echo '<a href="'. esc_url($button['link']) .'" title="'. esc_attr($button['title']) .'" class="btn '. strip_tags($button['color']) .'" target="'.$target.'">'. $button['title'] .'</a>';
                                  } ?>
                             </div>
                         <?php } ?>
@@ -158,15 +159,17 @@
                             if($our_clients && is_array($our_clients)) {
                                 echo '<ul class="our-clients-logo-list">';
                                     foreach ($our_clients as $client) {
-                                        echo '<li>';
-                                                 if (!empty($client['link'])) {
+                                        if ($client['logo']) { 
+                                            echo '<li>';
+                                                if (!empty($client['link'])) {
                                                     echo '<a href="'. esc_url($client['link']) .'" title="'. esc_attr($client['title']) .'" target="_blank">
                                                                 <img src="'. $client['logo'] .'" alt="'. esc_attr($client['title']) .'">
                                                           </a>';
-                                                 }   else {
-                                                     echo '<img src="'. $client['logo'] .'" alt="'. esc_attr($client['title']) .'">';
-                                                 }
-                                           echo '</li>';
+                                                }   else {
+                                                    echo '<img src="'. $client['logo'] .'" alt="'. esc_attr($client['title']) .'">';
+                                                }
+                                            echo '</li>';
+                                        }
                                     }
                                 echo '</ul>';
                            }
@@ -222,4 +225,3 @@
 <?php } ?>
 
 <?php get_footer(); ?>
-

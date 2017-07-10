@@ -2,11 +2,25 @@
 /**
  * Template Name: Blog
  */
-get_header(); ?>
+get_header();
 
-    <div class="content-wrap">
-		<div class="content">
-			<?php global $wp_query;
+$title = get_field('title');
+$content = get_field('content');
+?>
+
+    <?php get_template_part('inc/banner'); ?>
+
+    <section class="section-blog-list">
+        <div class="container">
+            <?php
+                if ($title) {
+                    echo '<h2 class="section-title line left">'. $title .'</h2>';
+                }
+                if ($content) {
+                    echo '<div class="content-wrap"><div class="content">'. $content .'</div></div>';
+                }
+            ?>
+            <?php global $wp_query;
 
                 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
                 $args = array(
@@ -18,21 +32,24 @@ get_header(); ?>
                 );
                 $new_query = new WP_Query( $args );
 
-                if ( $new_query->have_posts() ) : while ( $new_query->have_posts() ) : $new_query->the_post();
+                if ($new_query->have_posts()) {
+                    echo '<ul class="post-list">';
+                        while ($new_query->have_posts()) {
+                            $new_query->the_post();
+                            get_template_part('loop', 'post');
+                        }
+                    echo '</ul>';
+                    wp_pagenavi( array( 'query' => $new_query ) );
+
+                } else {
+                    echo "<p class='no-results'>Sorry, articles not found...</p>";
+                }
+                wp_reset_query();
             ?>
-				<?php get_template_part('loop', 'post'); ?>
+        </div>
+    </section>
 
-			<?php endwhile; ?>
 
-                <?php wp_pagenavi( array( 'query' => $new_query ) ); ?>
 
-            <?php else: echo "<p class='no-results'>Sorry, articles not found...</p>"; 
-                endif; wp_reset_query(); ?>
-			 
-		</div><!--/content-->	
-
-		<?php get_sidebar(); ?>
-
-	</div><!--/content-wrap-->
 
 <?php get_footer(); ?>

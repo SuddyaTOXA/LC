@@ -217,3 +217,19 @@ a.btn-submit,
     }
   }
 }
+
+a.btn-read-more,
+.btn-read-more {
+  min-width: 135px;
+  padding-left: 21px;
+  padding-right: 21px;
+  border-color: #00334E;
+  background-color: #00334E;
+  text-transform: capitalize;
+  &:hover,
+  &:focus {
+    color: #00334E;
+    border-color: #00334E;
+    background-color: transparent;
+  }
+}

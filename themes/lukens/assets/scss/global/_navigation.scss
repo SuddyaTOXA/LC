@@ -37,7 +37,13 @@
   a:hover,
   .current-menu-item > a,
   .current-menu-ancestor > a {
+    color: $color-text3;
     text-decoration: none;
+    .home &,
+    .scrolling & {
+      color: $color-text3;
+      text-decoration: none;
+    }
   }
 }
 .mobile-menu {

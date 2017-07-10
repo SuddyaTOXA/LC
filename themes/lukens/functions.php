@@ -1,7 +1,7 @@
 <?php
 // loading styles and scripts
 function load_style_script(){
-    wp_enqueue_style('fonts', '//fonts.googleapis.com/css?family=Lato:300,400,400i,700,900,900i|PT+Sans', array(), null);
+    wp_enqueue_style('fonts', '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900,900i|PT+Sans', array(), null);
     wp_enqueue_style('font-awesome.min', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0');
     wp_enqueue_style('styles', get_template_directory_uri() . '/assets/css/screen.css', array(), null );
     wp_enqueue_style('style', get_stylesheet_uri(), array(), null );
@@ -36,7 +36,7 @@ add_action('wp_head', 'add_ie_html5_shiv');
 // logo at the entrance to the admin panel
 function my_custom_login_logo(){
     echo '<style type="text/css">
-    h1 a {height:142px !important; width:190px !important; background-size:contain !important; background-image:url('.get_bloginfo("template_url").'/img/main_logo.png) !important;}
+    h1 a {height:32px !important; width:320px !important; background-size:contain !important; background-image:url('.get_bloginfo("template_url").'/img/logo.png) !important;}
     </style>';
 }
 add_action('login_head', 'my_custom_login_logo');
@@ -86,6 +86,10 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
 }
 
+//custom thumbnails size
+if ( function_exists( 'add_image_size' ) ) {
+    add_image_size( 'blog-thumb', 258, 172, true );
+}
 
 // support menus
 if ( function_exists( 'register_nav_menus' ) ) {

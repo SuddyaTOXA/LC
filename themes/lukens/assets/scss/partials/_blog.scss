@@ -1,0 +1,232 @@
+.section-blog-list {
+  padding-top: 59px;
+  padding-bottom: 66px;
+  .container {
+    max-width: 1044px;
+  }
+  .section-title {
+    font-size: 68px;
+    letter-spacing: 0;
+    &.line {
+      &:after {
+        bottom: 15px;
+      }
+    }
+  }
+}
+  .post-list {
+    margin-top: 26px;
+    max-width: 980px;
+    > li {
+      margin-bottom: 99px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+    .post-box {
+      max-width: 1000px;
+    }
+      .post-img-wrap {
+        float: left;
+        max-width: 258px;
+        width: 100%;
+        img {
+          box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
+          @include border-radius(4px);
+        }
+        & + .post-desc-box {
+          padding-left: 58px;
+        }
+      }
+        .post-date {
+          display: block;
+          margin-top: 6px;
+          color: #b0b0b0;
+          font-size: 20px;
+          font-weight: 500;
+        }
+      .post-desc-box {
+        overflow: hidden;
+        a.btn,
+        .btn {
+          margin-top: 17px;
+          margin-left: 3px;
+        }
+      }
+
+        .post-title {
+          margin-bottom: 11px;
+          font-family: $font-main;
+          font-size: 31px;
+          font-weight: 300;
+          font-style: italic;
+          line-height: 1.24;
+          color: $color-text4;
+          word-spacing: .08em;
+        }
+        .post-desc {
+          font-size: 18px;
+          line-height: 1.4;
+          word-spacing: .03em;
+        }
+
+.wp-pagenavi {
+  margin-top: 50px;
+  display: inline-block;
+  color: $color-text2;
+  font-size: 18px;
+  font-weight: 400;
+  .pages {
+    display: inline-block;
+    width: auto;
+    border: none;
+    box-shadow: none;
+  }
+  > * {
+    display: inline-block;
+    margin-right: 5px !important;
+    margin-bottom: 10px !important;
+    width: 34px;
+    height: 34px;
+    line-height: 27px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid $color-text4;
+    @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
+    @include border-radius(3px);
+    @include transition($transition-other);
+    &.extend,
+    &.previouspostslink,
+    &.nextpostslink {
+      line-height: 23px;
+      color: #40464b;
+    }
+    &.extend {
+      width: 45px;
+      box-shadow: none;
+    }
+    &.current {
+      color: #fff;
+      background-color: $color-text4;
+      box-shadow: none;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    color: $color-text4;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $color-text3;
+    }
+    .fa-angle-left,
+    .fa-angle-right {
+      position: relative;
+      top: 2px;
+      font-size: 30px;
+    }
+  }
+}
+.wp-pagenavi a:hover,
+.wp-pagenavi a:focus {
+  border-color: $color-text3;
+}
+.wp-pagenavi span.current {
+  border-color: $color-text4;
+}
+
+.section-blog {
+  padding-top: 93px;
+  padding-bottom: 190px;
+  .container {
+    max-width: 1070px;
+  }
+}
+  .blog-img-wrap {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 27px;
+    height: 447px;
+    @include bg();
+    box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
+    @include border-radius($radius-small);
+    img {
+      position: absolute;
+      min-height: 100%;
+      min-width: 100%;
+      width: auto;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      @include css3-prefix('transform', 'translate(-50%, -50%)');
+      opacity: 0;
+    }
+  }
+    .blog-title {
+      margin-bottom: 20px;
+      font-family: $font-main;
+      font-size: 45px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -.03em;
+      word-spacing: .15em;
+    }
+    .blog-info-box {
+      overflow: hidden;
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+      .info-left-box {
+        float: left;
+        .post-date {
+          margin-top: -8px;
+        }
+      }
+      .author {
+        display: block;
+        color: #b0b0b0;
+        font-size: 20px;
+        font-weight: 500;
+        a {
+          color: #b0b0b0;
+          &:hover,
+          &:focus {
+            color: $color-text3;
+            text-decoration: none;
+          }
+        }
+      }
+    .share-box {
+      float: right;
+    }
+      .share-btn-list {
+        margin: 6px -14px 0;
+        > li {
+          display: inline-block;
+          padding: 0 16px;
+          a {
+            .fa {
+              position: relative;
+              font-size: 38px;
+              color: $color-text4;
+              @include transition($transition-other);
+            }
+            &:hover,
+            &:focus {
+              .fa {
+                color: $color-text3;
+              }
+            }
+            .fa-facebook {
+              font-size: 34px;
+            }
+            .fa-twitter {
+              top: 2px;
+              font-size: 41px;
+            }
+          }
+        }
+      }
