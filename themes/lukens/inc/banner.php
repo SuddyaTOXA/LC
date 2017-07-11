@@ -33,7 +33,12 @@ $bg_img = get_field('page_image', $id);
             </div>
             <div class="banner-overlay" style="background-color: <?= $color ?>"></div>
             <?php
-                if (bg_img) echo '<img src="'. $bg_img .'" alt="'. strip_tags($title) .'">';
+                if ($bg_img) {
+                    echo '<img src="'. $bg_img .'" alt="'. strip_tags($title) .'">';
+                }  else {
+                    $url = get_bloginfo('template_url') . '/img/service_bg.png';
+                    echo '<img src="'. $url .'" alt="'. strip_tags($title) .'">';
+                }
             ?>
         </section>
     <?php ?>
