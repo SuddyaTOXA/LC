@@ -1,5 +1,136 @@
 .section-services-list {
+  overflow: hidden;
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
+}
+
+.section-service {
+  overflow: hidden;
+  padding-top: 107px;
+  padding-bottom: 50px;
+  .container {
+    max-width: 1040px;
+  }
+}
+  .content-box-wrap {
+    float: left;
+    position: relative;
+    -webkit-max-width: calc(100% - 270px);
+    max-width: calc(100% - 270px);
+    width: 100%;
+    padding-right: 59px;
+  }
+  #sidebar {
+    position: relative;
+    left: -1px;
+    float: left;
+    width: 270px;
+    margin-top: 9px;
+  }
+  .service-title {
+    margin-bottom: 13px;
+    display: inline-block;
+    font-family: $font-heading;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 1;
+    color: $color-text4;
+    text-transform: uppercase;
+    &.line {
+      &:after {
+        bottom: 5px;
+      }
+    }
+  }
+    .service-sub-title {
+      margin-bottom: 11px;
+      padding-right: 5px;
+      font-family: $font-main;
+      font-size: 31px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.25;
+      word-spacing: .1em;
+    }
+
+.widget {
+  margin-bottom: 32px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  > h4 {
+    margin-bottom: 7px;
+    padding-bottom: 11px;
+    font-family: $font-main;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: .01em;
+    line-height: 1.2;
+    text-transform: capitalize;
+    border-bottom: 1px solid #f3f3f3;
+  }
+}
+.services-widget-list {
+  > li {
+    margin-bottom: 2px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      position: relative;
+      padding-left: 25px;
+      color: $color-text4;
+      font-size: 13px;
+      &:hover,
+      &:focus {
+        color: $color-text3;
+        text-decoration: none ;
+      }
+    }
+  }
+}
+  .w-icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    font-size: 16px;
+    @include css3-prefix('transform', 'translate(-50%, -50%)');
+    &.icon-icon_bullseye {
+      font-size: 16px;
+    }
+    &.icon-icon_bulb_green {
+      font-size: 20px;
+    }
+    &.icon-icon_analytics {
+      font-size: 10px;
+    }
+    &.icon-icon_mobile {
+      font-size: 17px;
+    }
+    &.icon-icon_search {
+      font-size: 16px;
+    }
+    &.icon-icon_political {
+      font-size: 17px;
+    }
+  }
+.study-widget-list {
+  > li {
+    margin-bottom: 2px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      position: relative;
+      color: $color-text4;
+      font-size: 13px;
+      text-transform: capitalize;
+      &:hover,
+      &:focus {
+        color: $color-text3;
+        text-decoration: none ;
+      }
+    }
+  }
 }
