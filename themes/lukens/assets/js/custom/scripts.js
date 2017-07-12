@@ -39,6 +39,22 @@ jQuery(document).ready(function($) {
                 $(document.body).toggleClass('overflow');
             });
 
+            //for case study box
+            $(window).on('load resize', function() {
+                if ($('.study-list').length) {
+                    var maxHeight = 0,
+                        box = $('.study-left-box'),
+                        imgBox = $('.study-img-wrap');
+
+
+                    box.each(function () {
+                        if ( $(this).outerHeight() > maxHeight ) {
+                            maxHeight = $(this).outerHeight();
+                        }
+                    });
+                    imgBox.css('height', maxHeight)
+                }
+            })
         })
 
     });

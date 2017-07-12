@@ -233,3 +233,21 @@ a.btn-read-more,
     background-color: transparent;
   }
 }
+a.bth-get-touch,
+.bth-get-touch {
+  display: inline-block;
+  padding: 4px 14px 3px;
+  letter-spacing: .03em;
+  font-size: 14px;
+  font-weight: 600;
+  color: $white;
+  text-transform: uppercase;
+  border: 1px solid #2a425a;
+  background-color: transparent;
+  @include border-radius(3px);
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: #2a425a;
+  }
+}

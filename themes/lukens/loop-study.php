@@ -22,20 +22,22 @@
 
         <div class="study-left-box">
             <div class="study-info-box">
-                <div class="study-logo">
-                    <?php
-                        if ($logo) {
-                            echo '<img src="'. $logo['url'] .'" alt="'. esc_attr($title) .'">';
-                        }
-                    ?>
+                <div class="study-logo-wrap">
+                    <div class="study-logo">
+                        <?php
+                            if ($logo) {
+                                echo '<img src="'. $logo['url'] .'" alt="'. esc_attr($title) .'">';
+                            }
+                        ?>
+                    </div>
+                        <?php
+                            if ($link) {
+                                $regex = '/(?<!href=["\'])http:\/\//';
+                                $url_title = preg_replace($regex, '', $link);
+                                echo '<a href="'. esc_url($link) .'" title="'. esc_attr($title) .'" class="study-logo-link" target="_blank">'. $url_title .'</a>';
+                            }
+                        ?>
                 </div>
-                    <?php
-                        if ($link) {
-                            $regex = '/(?<!href=["\'])http:\/\//';
-                            $url_title = preg_replace($regex, '', $link);
-                            echo '<a href="'. esc_url($link) .'" title="'. esc_attr($title) .'" class="study-logo-link" target="_blank">'. $url_title .'</a>';
-                        }
-                    ?>
                 <?php if($results && is_array($results)) { ?>
                     <div class="study-results">
                         <?php  foreach ($results as $result) { ?>
@@ -75,16 +77,18 @@
 
             <div class="study-tag">
                 <?php
-//                    if( get_the_tag_list() ){
-//                        echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
-//                    }
-                    $posttags = get_the_tags();
-                    if ($posttags) {
-                        echo '<ul>';
-                        foreach($posttags as $tag) {
-                            echo '<li>' .$tag->name. '</li>';
+                    $args = array(
+                        'taxonomy' => 'case_tag',
+                    );
+                    $terms = get_terms( $args );
+
+                    if( $terms && is_array($terms) ){
+                        echo "<ul>";
+                        foreach( $terms as $term ){
+                            echo "<li>". $term->name ."</li>";
+
                         }
-                        echo '</ul>';
+                        echo "</ul>";
                     }
                 ?>
             </div>

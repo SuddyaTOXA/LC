@@ -22,26 +22,20 @@ $bottom_btn = get_field('bottom_button');
                 $terms = get_terms( $args );
 
                 if( $terms && is_array($terms) ){
+                    $tax_id = get_queried_object()->term_id;
                     echo '<ul class="study-filter">';
-                        echo '<li class="active"><a href="'. get_the_permalink(10) .'" title="Show All">Show All</a></li>';
+                        echo '<li><a href="'. get_the_permalink(10) .'" title="Show All">Show All</a></li>';
                         foreach( $terms as $term ){
-                            echo '<li><a href="'. get_term_link( $term->term_id, $taxonomy = 'study_category' ) .'" title="'. $term->name .'">'. $term->name .'</a></li>';
+                            $term_id = $term->term_id;
+                            if ($tax_id == $term_id) {
+                                echo '<li class="active"><a href="'. get_term_link( $term->term_id, $taxonomy = 'study_category' ) .'" title="'. $term->name .'">'. $term->name .'</a></li>';
+                            } else {
+                                echo '<li><a href="'. get_term_link( $term->term_id, $taxonomy = 'study_category' ) .'" title="'. $term->name .'">'. $term->name .'</a></li>';
+                            }
                         }
                     echo '</ul>';
                 }
             ?>
-
-<!--            <ul class="study-filter">-->
-<!--                <li class="active">-->
-<!--                    <a href="#">Show All</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a href="#">Non-Profit</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a href="#">Political</a>-->
-<!--                </li>-->
-<!--            </ul>-->
 
             <?php
                 if ($title) {
@@ -50,32 +44,14 @@ $bottom_btn = get_field('bottom_button');
                 if ($content) {
                     echo '<div class="content-wrap"><div class="content">'. $content .'</div></div>';
                 }
-
-                global $wp_query;
-
-                $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                $args = array(
-                    'post_type'     => 'study',
-                    'post_status'   => 'publish',
-                    'orderby'       => 'date',
-                    'order'         => 'ASC',
-                    'paged'         => $paged,
-                );
-                $new_query = new WP_Query( $args );
-
-                if ($new_query->have_posts()) {
+                if ( have_posts() ) {
                     echo '<ul class="study-list">';
-                        while ($new_query->have_posts()) {
-                            $new_query->the_post();
+                        while ( have_posts() ) {
+                            the_post();
                             get_template_part('loop', 'study');
                         }
                     echo '</ul>';
-                    wp_pagenavi( array( 'query' => $new_query ) );
-
-                } else {
-                    echo "<p class='no-results'>Sorry, articles not found...</p>";
                 }
-                wp_reset_query();
             ?>
         </div>
     </section>

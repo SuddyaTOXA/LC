@@ -1,20 +1,93 @@
 .section-study-list {
+  position: relative;
   overflow: hidden;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 51px;
+  padding-bottom: 125px;
   background-image: -webkit-linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 98%);
   background-image: -moz-linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 98%);
   background-image: -o-linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 98%);
   background-image: -ms-linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 98%);
   background-image: linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 98%);
-  .content {
+  &:after,
+  &:before {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    width: 100%;
+    left: 0;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 30%, rgba(255,255,255,0.65) 56%, rgba(246,246,246,0.22) 89%, rgba(237,237,237,0.07) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(30%, rgba(255,255,255,1)), color-stop(56%, rgba(255,255,255,0.65)), color-stop(89%, rgba(246,246,246,0.22)), color-stop(100%, rgba(237,237,237,0.07)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 30%, rgba(255,255,255,0.65) 56%, rgba(246,246,246,0.22) 89%, rgba(237,237,237,0.07) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 30%, rgba(255,255,255,0.65) 56%, rgba(246,246,246,0.22) 89%, rgba(237,237,237,0.07) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 30%, rgba(255,255,255,0.65) 56%, rgba(246,246,246,0.22) 89%, rgba(237,237,237,0.07) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 30%, rgba(255,255,255,0.65) 56%, rgba(246,246,246,0.22) 89%, rgba(237,237,237,0.07) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+  }
+  &:before {
+    height: 200px;
+    top: 0;
+  }
+  &:after {
+    height: 150px;
+    bottom: 0;
+    @include css3-prefix('transform', 'rotate(180deg)');
+  }
+  .container {
+    position: relative;
+    z-index: 10;
     max-width: 1010px;
   }
 }
+  .study-filter {
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1;
+    > li {
+      position: relative;
+      display: inline-block;
+      margin-right: 1px;
+      &:after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 1px;
+        top: 0;
+        right: -1px;
+        background-color: #bebebe;
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          content: none;
+        }
+      }
+      a {
+        display: inline-block;
+        padding: 7px 13px 8px;
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #bebebe;
+        &:hover,
+        &:focus {
+          color: $color-text3;
+          text-decoration: none;
+        }
+      }
+      &.active {
+        a {
+          color: #5e6666;
+        }
+      }
+    }
+  }
   .study-list {
+    margin-top: 66px;
     > li {
       display: block;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       &:last-child {
         margin-bottom: 0;
       }
@@ -30,15 +103,23 @@
   @include border-radius($radius-small);
 }
     .study-left-box {
-      padding: 45px 60px 30px 30px;
+      overflow: hidden;
+      //padding: 39px 60px 30px 30px;
+      padding-left: 27px;
+      padding-right: 60px;
     }
       .study-info-box {
         float: left;
-        width: 230px;
+        width: 208px;
+        padding-top: 29px;
+        padding-bottom: 30px;
         padding-right: 30px;
       }
+        .study-logo-wrap {
+          min-height: 127px;
+        }
           .study-logo {
-            max-width: 170px;
+            max-width: 140px;
             margin-bottom: 5px;
             img {
               max-width: 100%;
@@ -47,6 +128,8 @@
           }
           a.study-logo-link,
           .study-logo-link {
+            display: block;
+            margin-top: -5px;
             font-family: $font-pt;
             font-weight: 700;
             font-size: 10px;
@@ -54,30 +137,48 @@
             &:hover,
             &:focus {
               color: $color-text3;
-              text-transform: none;
+              text-decoration: none;
             }
           }
           .study-results {
             color: #79a22e;
             font-family: $font-main;
           }
-          .study-value {
-            font-size: 50px;
-            line-height: 1;
-          }
-          .study-dimension {
-            font-size: 29px;
-            font-weight: 900;
-          }
-          .study-icon {}
-          .study-description {
-            font-family: $font-pt;
-            font-weight: 400;
-            font-size: 12px;
-            color: $color-text4;
-          }
+            .study-results-box {
+              position: relative;
+              display: inline-block;
+              padding-right: 30px;
+              margin-left: -4px;
+            }
+              .study-value {
+                font-size: 50px;
+                line-height: 1;
+                font-weight: 900;
+              }
+              .study-dimension {
+                position: absolute;
+                right: 5px;
+                top: -5px;
+                font-size: 29px;
+                font-weight: 900;
+              }
+              .study-icon {
+                position: absolute;
+                right: 0;
+                bottom: 6px;
+                font-size: 10px;
+              }
+              .study-description {
+                display: block;
+                font-family: $font-pt;
+                font-weight: 400;
+                font-size: 12px;
+                color: $color-text4;
+              }
         .study-desc-box {
           overflow: hidden;
+          padding-top: 39px;
+          padding-bottom: 30px;
         }
           .study-purposes {
             display: block;
@@ -87,18 +188,29 @@
           }
           a.study-title,
           .study-title {
+            display: block;
+            margin-bottom: 18px;
             font-size: 20px;
             font-weight: 900;
             color: $color-text4;
+            line-height: 1;
             &:hover,
             &:focus {
               text-decoration: none;
               color: $color-text3;
             }
           }
-          .study-desc {}
+          .study-desc {
+            display: block;
+            margin-bottom: 10px;
+            min-height: 74px;
+            font-size: 14px;
+            line-height: 1.25;
+            word-spacing: .02em;
+          }
           .study-tag {
             ul {
+              line-height: 1;
               > li {
                 display: inline-block;
                 padding: 3px 5px;
@@ -113,6 +225,7 @@
 
     }
       .study-img-wrap {
+        overflow: hidden;
         float: right;
         position: relative;
         width: 370px;
@@ -128,5 +241,13 @@
           top: 50%;
           left: 50%;
           @include css3-prefix('transform', 'translate(-50%, -50%)');
+          opacity: 0;
         }
       }
+
+.section-get-in-touch {
+  padding-top: 25px;
+  padding-bottom: 24px;
+  text-align: center;
+  background-color: #79a22e;
+}
