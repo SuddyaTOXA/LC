@@ -6,7 +6,7 @@ $share_btn = get_field('share_btn');
 <?php get_template_part('inc/banner'); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <section class="section-blog">
+    <section class="section-blog" id="main-content">
         <div class="container">
 
             <?php if (has_post_thumbnail()) { ?>

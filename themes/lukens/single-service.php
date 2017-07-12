@@ -6,7 +6,7 @@ $sub_title = get_field('sub_title');
 <?php get_template_part('inc/banner'); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <section class="section-service">
+    <section class="section-service" id="main-content">
         <div class="container">
             <div class="content-box-wrap">
                 <?php

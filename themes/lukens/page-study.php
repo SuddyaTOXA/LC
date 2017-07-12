@@ -12,7 +12,7 @@ $bottom_btn = get_field('bottom_button');
 
     <?php get_template_part('inc/banner'); ?>
 
-    <section class="section-study-list">
+    <section class="section-study-list" id="main-content">
         <div class="container">
 
             <?php
@@ -30,18 +30,6 @@ $bottom_btn = get_field('bottom_button');
                     echo '</ul>';
                 }
             ?>
-
-<!--            <ul class="study-filter">-->
-<!--                <li class="active">-->
-<!--                    <a href="#">Show All</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a href="#">Non-Profit</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a href="#">Political</a>-->
-<!--                </li>-->
-<!--            </ul>-->
 
             <?php
                 if ($title) {

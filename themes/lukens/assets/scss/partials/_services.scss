@@ -1,8 +1,69 @@
 .section-services-list {
-  overflow: hidden;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+  }
+  .client.container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .vc_section {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .title {
+    margin-bottom: 15px;
+    font-family: 'Hikou Rough';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    display: inline-block;
+    letter-spacing: -.01em;
+    color: #2a425a;
+    text-transform: uppercase;
+    &.line {
+      &:after {
+        bottom: 2px;
+      }
+    }
+    a {
+      font-family: 'Hikou Rough';
+      font-weight: 400;
+    }
+  }
+  .box {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  .right-bg {
+    background-position: right !important;
+  }
+  .left-bg {
+    background-position: left !important;
+  }
+  .inverse {
+    .box,
+    .title {
+      color: $white;
+    }
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .form-wrap {
+    max-width: 530px;
+    margin: 0 auto;
+  }
+  .submit-wrap:after {
+    right: 45px;
+  }
+}
+.bg-gradient {
+  @include css3-prefix('background-image','linear-gradient(to bottom, rgba(238, 238, 238, 0) 0%, rgba(238, 238, 238, .3) 60%, rgba(238, 238, 238, .7) 100%)');
 }
 
 .section-service {
@@ -52,6 +113,9 @@
       font-style: italic;
       line-height: 1.25;
       word-spacing: .1em;
+      b, strong {
+        font-weight: 500;
+      }
     }
 
 .widget {

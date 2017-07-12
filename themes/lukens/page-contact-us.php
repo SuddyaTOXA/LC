@@ -16,7 +16,7 @@ get_header();
     <?php get_template_part('inc/banner'); ?>
 
     <?php if ($contact_page_title || $contact_page_content || $form) {?>
-        <section class="section-contact-page">
+        <section class="section-contact-page" id="main-content">
             <div class="container">
                 <?php
                     if ($contact_page_title) {

@@ -42,7 +42,7 @@
 span.wpcf7-not-valid-tip {
   position: absolute;
   color: #f00;
-  font-size: 1em;
+  font-size: 14px;
   font-weight: normal;
   display: inline-table;
   width: 100%;
@@ -51,6 +51,7 @@ span.wpcf7-not-valid-tip {
 }
 div.wpcf7-response-output {
   margin: 40px 0 0;
+  font-size: 14px;
 }
 div.wpcf7-validation-errors {
   border-width: 1px;

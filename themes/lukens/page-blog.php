@@ -10,7 +10,7 @@ $content = get_field('content');
 
     <?php get_template_part('inc/banner'); ?>
 
-    <section class="section-blog-list">
+    <section class="section-blog-list" id="main-content">
         <div class="container">
             <?php
                 if ($title) {

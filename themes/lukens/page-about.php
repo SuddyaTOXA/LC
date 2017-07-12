@@ -12,20 +12,9 @@ get_header();
     <?php get_template_part('inc/banner'); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <section class="section-about">
-        <div class="container">
-            <?php
-    //            if ($title) {
-    //                echo '<h2 class="section-title line left">'. $title .'</h2>';
-    //            }
-    //            if ($content) {
-    //                echo '<div class="content-wrap"><div class="content">'. $content .'</div></div>';
-    //            }
-            ?>
-
-        </div>
+    <div class="section-about" id="main-content">
         <?php echo the_content(); ?>
-    </section>
+    </div>
 <?php endwhile; else: endif; ?>
 
     <?php if ($bottom_btn && is_array($bottom_btn)) { ?>
@@ -43,7 +32,6 @@ get_header();
 
 
 <?php get_footer(); ?>
-
 
 
 
