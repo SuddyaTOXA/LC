@@ -21,7 +21,6 @@ $content = get_field('content');
                 }
 
                 global $wp_query;
-
                 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
                 $args = array(
                     'post_type'     => 'post',
