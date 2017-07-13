@@ -63,6 +63,10 @@
           &.line {
             opacity: 1;
           }
+          .error-404 & {
+            font-size: 100px;
+            line-height: 1.05;
+          }
         }
         .short-info {
           display: block;
@@ -71,6 +75,9 @@
           font-size: 23px;
           line-height: 1.17;
           font-style: italic;
+          .error-404 & {
+            font-size: 30px;
+          }
         }
   .banner-overlay {
     position: absolute;

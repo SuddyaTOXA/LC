@@ -1802,6 +1802,9 @@ select {
   text-transform: uppercase; }
   .banner-title.line {
     opacity: 1; }
+  .error-404 .banner-title {
+    font-size: 100px;
+    line-height: 1.05; }
 
 .short-info {
   display: block;
@@ -1810,6 +1813,8 @@ select {
   font-size: 23px;
   line-height: 1.17;
   font-style: italic; }
+  .error-404 .short-info {
+    font-size: 30px; }
 
 .banner-overlay {
   position: absolute;
