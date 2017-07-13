@@ -56,6 +56,20 @@ jQuery(document).ready(function($) {
                 }
             })
 
+            //for home case study box
+            $(window).on('load resize', function() {
+                if ($('.recent-case-post').length) {
+                    var box = $('.study-left-box'),
+                        imgBox = $('.study-img-wrap');
+
+                    box.each(function (i) {
+                        var maxHeight = 0;
+                            maxHeight = box.eq(i).outerHeight();
+                            imgBox.eq(i).css('height', maxHeight);
+                    });
+                }
+            })
+
             //for case related box
             $(window).on('load resize', function() {
                 if ($('.related-case-list').length) {

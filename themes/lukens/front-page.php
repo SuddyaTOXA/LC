@@ -107,11 +107,31 @@
                     }
                 ?>
 
-                <div class="recent-case-post">
-                    <ul>
-                        <li></li>
-                    </ul>
-                </div>
+                <?php
+                    global $wp_query;
+
+                    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                    $args = array(
+                        'post_type'     => 'study',
+                        'post_status'   => 'publish',
+                        'orderby'       => 'date',
+                        'posts_per_page' => 3,
+                        'order'         => 'ASC',
+                        'paged'         => $paged,
+                    );
+                    $new_query = new WP_Query( $args );
+
+                    if ($new_query->have_posts()) {
+                        echo '<ul class="recent-case-post">';
+                        while ($new_query->have_posts()) {
+                            $new_query->the_post();
+                            get_template_part('loop', 'study');
+                        }
+                        echo '</ul>';
+
+                    }
+                    wp_reset_query();
+                ?>
                 <?php
                     if ($case_studies_button && is_array($case_studies_button)) {
                         foreach ($case_studies_button as $button) {
@@ -144,7 +164,61 @@
                     </div>
                 </div>
                 <div class="right-box">
-                    <div class="table-inner-box" style="height: 720px;"></div>
+                    <div class="table-inner-box">
+                        <?php
+                        global $wp_query;
+
+                        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                        $args = array(
+                            'post_type'     => 'post',
+                            'post_status'   => 'publish',
+                            'orderby'       => 'date',
+                            'posts_per_page' => 3,
+                            'order'         => 'ASC',
+                            'paged'         => $paged,
+                        );
+                        $new_query = new WP_Query( $args );
+
+                        if ($new_query->have_posts()) {
+                            echo '<ul class="recent-blog-post">';
+                            while ($new_query->have_posts()) {
+                                $new_query->the_post();
+//                                get_template_part('loop', 'post');
+                            ?>
+                                <li>
+                                    <div class="recent-blog-box">
+                                        <div class="f-coll">
+                                            <span class="recent-blog-date"><?php the_date(); ?></span>
+                                            <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
+                                                <?php the_title('<span class="recent-blog-title">', '</span>'); ?>
+                                            </a>
+                                            <span class="recent-blog-name"><?php the_author_posts_link(); ?></span>
+                                            <?php get_template_part('inc/sharehome'); ?>
+                                        </div>
+                                        <div class="s-coll" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">
+                                            <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
+                                                <?php the_post_thumbnail('medium'); ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="f-coll copy">
+                                        <span class="recent-blog-date"><?php the_date(); ?></span>
+                                        <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
+                                            <?php the_title('<span class="recent-blog-title">', '</span>'); ?>
+                                        </a>
+                                        <span class="recent-blog-name"><?php the_author_posts_link(); ?></span>
+                                        <?php get_template_part('inc/sharehome'); ?>
+                                    </div>
+                                </li>
+
+                            <?php
+                            }
+                            echo '</ul>';
+
+                        }
+                        wp_reset_query();
+                        ?>
+                    </div>
                 </div>
             </div>
         </section>

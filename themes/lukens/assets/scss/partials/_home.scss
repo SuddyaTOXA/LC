@@ -219,9 +219,35 @@
   .section-title {
     margin-bottom: 8px;
   }
+  .content-wrap {
+    margin-bottom: 80px;
+  }
 }
   .recent-case-post {
-    height: 430px;
+    position: relative;
+    max-width: 970px;
+    margin: 0 auto 70px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    > li {
+      position: relative;
+      z-index: 5;
+      opacity: .6;
+      &:first-child {
+        z-index: 10;
+        opacity: 1;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        margin: 0 52px;
+      }
+      &:nth-child(3) {
+        position: absolute;
+        bottom: 0;
+        margin: 0 52px;
+      }
+    }
   }
 
 .table-inner-box {
@@ -232,10 +258,20 @@
 }
 
 .section-the-latest {
+  position: relative;
   overflow: hidden;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 35px;
+  padding-bottom: 15px;
   @include bg(center, contain, no-repeat);
+  &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    background-image: linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 98%);
+  }
   .container {
     display: table;
     max-width: 1480px;
@@ -250,7 +286,164 @@
   .table-inner-box {
     max-width: 300px;
   }
+  .right-box {
+    .table-inner-box {
+      max-width: 100%;
+    }
+  }
 }
+.recent-blog-post {
+  max-width: 500px;
+  > li {
+    position: relative;
+    margin-bottom: 26px;
+    &:nth-child(odd) {
+      left: 70px;
+    }
+    &:last-child {
+      margin-bottom: 20px;
+    }
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        .recent-blog-title {
+          color: $color-text3;
+        }
+      }
+    }
+  }
+}
+  .recent-blog-box {
+    position: relative;
+    z-index: 10;
+    display: table;
+    width: 100%;
+    height: 202px;
+    box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    .f-coll,
+    .s-coll {
+      display: table-cell;
+      height: 206px;
+      vertical-align: top;
+    }
+  }
+      .f-coll {
+        position: relative;
+        padding: 10px 20px 40px 30px;
+        width: 206px;
+        background-color: $white;
+        box-shadow: -20px 10px 30px rgba(0, 0, 0, 0.2);
+        &.copy {
+          position: absolute;
+          display: block;
+          right: -236px;
+          top: 0;
+          height: 206px;
+          z-index: 5;
+          background-color: transparent;
+          box-shadow: -50px 10px 50px rgba(0, 0, 0, 0.2);
+        }
+        .share-box {
+          position: absolute;
+          left: 30px;
+          bottom: 15px;
+        }
+          .share-btn-list {
+            margin-left: -10px;
+            margin-right: -10px;
+            > li {
+              padding: 0 10px;
+              a {
+                .fa {
+                  font-size: 16px;
+                  color: #cbc0a8;
+                }
+                .fa-twitter {
+                  top: 1px;
+                }
+                .fa-envelope-o {
+                  top: 1px;
+                }
+                .fa-facebook {
+                  font-size: 13px;
+                }
+                .fa-envelope {
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+      }
+
+      .s-coll {
+        overflow: hidden;
+        position: relative;
+        background-color: #f3f3f3;
+        @include bg();
+        box-shadow: 60px 5px 50px rgba(0, 0, 0, 0.2);
+        img {
+          position: absolute;
+          z-index: 1;
+          min-height: 100%;
+          min-width: 100%;
+          width: auto;
+          height: auto;
+          top: 50%;
+          left: 50%;
+          @include css3-prefix('transform', 'translate(-50%, -50%)');
+          opacity: 0;
+        }
+        a {
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+      }
+          .recent-blog-date {
+            position: relative;
+            margin-bottom: 29px;
+            display: block;
+            color: $color-text4;
+            font-family: $font-pt;
+            font-size: 12px;
+            line-height: 1;
+            &:before {
+              position: absolute;
+              content: '';
+              left: -20px;
+              top: 2px;
+              width: 10px;
+              height: 10px;
+              @include border-radius(50%);
+              background-color: #f3f3f3;
+            }
+          }
+          .recent-blog-title {
+            overflow: hidden;
+            display: block;
+            margin-bottom: -3px;
+            height: 72px;
+            color: $color-text4;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1.2;
+          }
+          .recent-blog-name {
+            color: $color-text3;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+            a {
+              &:hover,
+              &:focus {
+                text-decoration: none;
+                color: $color-text5;
+              }
+            }
+          }
+
 
 .section-our-clients {
   overflow: hidden;

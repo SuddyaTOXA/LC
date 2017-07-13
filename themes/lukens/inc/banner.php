@@ -11,7 +11,7 @@ $color = get_field('page_overlay', $id);
 $bg_img = get_field('page_image', $id);
 
 ?>
-    <?php if ($title || $short_info || $color || $bg_img) { ?>
+    <?php // if ($title || $short_info || $color || $bg_img) { ?>
         <section class="section-page-banner vertical-align">
             <div class="container">
                 <div class="container-box">
@@ -39,5 +39,5 @@ $bg_img = get_field('page_image', $id);
                 }
             ?>
         </section>
-    <?php } ?>
+    <?php // } ?>
 
