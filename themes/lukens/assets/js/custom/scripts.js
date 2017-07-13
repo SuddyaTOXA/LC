@@ -55,6 +55,24 @@ jQuery(document).ready(function($) {
                     imgBox.css('height', maxHeight)
                 }
             })
+
+            //for case related box
+            $(window).on('load resize', function() {
+                if ($('.related-case-list').length) {
+                    var maxHeight = 0,
+                        box = $('.related-case-decs'),
+                        imgBox = $('.related-case-img-box');
+
+
+                    box.each(function () {
+                        if ( $(this).outerHeight() > maxHeight ) {
+                            maxHeight = $(this).outerHeight();
+                        }
+                    });
+                    imgBox.css('height', maxHeight)
+                }
+            })
+
         })
 
     });

@@ -251,3 +251,258 @@
   text-align: center;
   background-color: #79a22e;
 }
+.section-study {
+  .container {
+    max-width: 1030px;
+    margin: 0 auto;
+  }
+  .container-small {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .content {
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.5;
+    letter-spacing: 0;
+    word-spacing: .05em;
+  }
+  .vc_section {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.study-info {
+  color: #bebebe;
+  box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
+  @include css3-prefix('background-image', 'linear-gradient(270deg, #ffffff 0%, rgba(240, 240, 240, 0.85) 100%)');
+  strong, b {
+    font-weight: 900;
+  }
+  i {
+    font-style: italic;
+  }
+}
+.box-shadow {
+  box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
+}
+.section-related-case {
+  padding-top: 55px;
+  text-align: center;
+  background-color: #f3f3f3;
+  .container {
+    max-width: 1086px;
+  }
+  .section-title {
+    margin-bottom: 69px;
+    font-size: 32px;
+    color: #03263d;
+    &.line {
+      &:after {
+        bottom: 6px;
+      }
+    }
+  }
+}
+  .related-case-list {
+    margin: 0 -14px 81px;
+    text-align: center;
+    > li {
+      display: inline-block;
+      width: 49%;
+      padding: 0 14px;
+      margin-bottom: 20px;
+      vertical-align: top;
+      a {
+        &:hover,
+        &:focus {
+          .related-case-box {
+            box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.5);
+          }
+          .proposes { }
+          .related-case-title {
+            color: $color-text3;
+          }
+          text-decoration: none;
+        }
+      }
+    }
+  }
+    .related-case-box {
+      display: block;
+      overflow: hidden;
+      background-color: $white;
+      box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
+      @include border-radius(4px);
+      @include transition($transition-other);
+    }
+      .related-case-img-box {
+        overflow: hidden;
+        position: relative;
+        float: right;
+        @include bg();
+        width: 58%;
+        min-height: 195px;
+        img {
+          position: absolute;
+          z-index: 1;
+          min-height: 100%;
+          min-width: 100%;
+          width: auto;
+          height: auto;
+          top: 50%;
+          left: 50%;
+          @include css3-prefix('transform', 'translate(-50%, -50%)');
+          opacity: 0;
+        }
+      }
+    .related-case-decs {
+      overflow: hidden;
+      display: block;
+      padding: 48px 30px 42px;
+      text-align: left;
+    }
+      .proposes {
+        display: block;
+        color: #79a22e;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+      .related-case-title {
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 1.25;
+        color: $color-text4;
+        @include transition($transition-link);
+      }
+.case-post-nav {
+  display: table;
+  width: 99.999%;
+  margin: 0 auto;
+  height: 150px;
+  > li {
+    position: relative;
+    display: table-cell;
+    width: 33.333%;
+    padding: 0 10px;
+    height: 50px;
+    vertical-align: middle;
+    &:first-child {
+      text-align: right;
+      padding-right: 76px;
+      a {
+        padding: 2px 0;
+      }
+    }
+    &:last-child {
+      text-align: left;
+      padding-left: 76px;
+      a {
+        padding: 2px 0;
+      }
+    }
+    &.center {
+      padding: 0 30px;
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 100%;
+        top: 0;
+        @include css3-prefix('background-image', 'linear-gradient(to right, rgba(238, 238, 238, 0) 0%, #d8d8d8 100%)');
+        opacity: 0.4;
+      }
+      &:before {
+        left: -22px;
+      }
+      &:after {
+        right: -22px;
+        @include css3-prefix('transform', 'rotate(180deg)');
+      }
+      a {
+        display: inline-block;
+      }
+    }
+    a {
+      display: block;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        .case,
+        .case-post-title {
+          color: $color-text3;
+        }
+        .case {
+          &:after,
+          &:before {
+            color: $color-text3;
+          }
+        }
+      }
+    }
+  }
+  a.btn-green-inverse,
+  .btn-green-inverse {
+    color: $color-text4;
+    padding-left: 21px;
+    padding-right: 21px;
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+  .case {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: $color-text4;
+    text-transform: uppercase;
+    @include transition($transition-link);
+    &:after,
+    &:before {
+      position: absolute;
+      content: "\f0d9";
+      font-family: FontAwesome;
+      font-size: 24px;
+      line-height: 1;
+      text-indent: 0;
+      width: 9px;
+      height: 24px;
+      top: -3px;
+      color: #bebebe;
+      @include transition($transition-link);
+    }
+    &:after {
+      left: -25px;
+    }
+    &:before {
+      left: -15px;
+    }
+    &.case-next {
+      &:after,
+      &:before {
+        @include css3-prefix('transform', 'rotate(180deg)');
+      }
+      &:after {
+        right: -25px;
+        left: auto;
+      }
+      &:before {
+        right: -15px;
+        left: auto;
+      }
+    }
+  }
+  .case-post-title {
+    display: block;
+    color: #03263d;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    @include transition($transition-link);
+  }

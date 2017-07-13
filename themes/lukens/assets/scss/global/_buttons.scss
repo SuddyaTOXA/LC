@@ -18,7 +18,7 @@ a.btn, .btn {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  @include border-radius($radius-small);
+  @include border-radius(2px);
   &:hover,
   &:focus {
     border-color: rgba(209, 139, 44, .7);
