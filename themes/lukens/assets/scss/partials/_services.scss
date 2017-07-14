@@ -4,6 +4,16 @@
     margin: 0 auto;
 
   }
+  .vc_section {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .vc_row {
+    margin-right: 0;
+    margin-left: 0;
+  }
   .client.container {
     max-width: 1180px;
     margin: 0 auto;
@@ -70,7 +80,7 @@
 .section-service {
   overflow: hidden;
   padding-top: 107px;
-  padding-bottom: 50px;
+  padding-bottom: 110px;
   .container {
     max-width: 1040px;
   }

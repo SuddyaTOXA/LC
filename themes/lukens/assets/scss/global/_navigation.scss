@@ -51,10 +51,14 @@
   > li {
     position: relative;
     display: block;
+    border-bottom: 1px solid rgba(42, 66, 90, .4);
+    &:last-child {
+      border-bottom: none;
+    }
     a {
       position: relative;
       display: block;
-      text-transform: uppercase;
+      text-transform: capitalize;
       padding: 10px 25px 8px;
       color: $color-nav;
       font-size: 16px;

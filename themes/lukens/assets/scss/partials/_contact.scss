@@ -56,7 +56,7 @@
             font-family: 'Hikou Rough';
             font-weight: 400;
             font-size: 54px;
-            line-height: 1.25;
+            line-height: 1;
             letter-spacing: -.01em;
             color: $color-text4;
             text-transform: uppercase;
@@ -70,7 +70,7 @@
         }
         .short-info {
           display: block;
-          margin-top: -17px;
+          margin-top: -6px;
           color: #03263d;
           font-size: 23px;
           line-height: 1.17;
@@ -128,10 +128,12 @@
 }
   .form-box {
     overflow: hidden;
+    padding-bottom: 10px;
+    text-align: left;
   }
   .form-page-wrap {
     .form-btn-box {
-      margin-top: 70px;
+      margin-top: 60px;
     }
   }
 

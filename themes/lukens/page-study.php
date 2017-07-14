@@ -59,7 +59,28 @@ $bottom_btn = get_field('bottom_button');
                         }
                     echo '</ul>';
                     wp_pagenavi( array( 'query' => $new_query ) );
+                    ?>
+                    <script>
+                        //for case study box
+                        if (jQuery('.study-list').length) {
+                            var maxHeight = 0,
+                                box = jQuery('.study-left-box'),
+                                imgBox = jQuery('.study-img-wrap');
 
+
+                            box.each(function () {
+                                if (jQuery(window).width() > 767) {
+                                    if ( jQuery(this).outerHeight() > maxHeight ) {
+                                        maxHeight = jQuery(this).outerHeight();
+                                    }
+                                    imgBox.css('height', maxHeight);
+                                } else {
+                                    imgBox.css('height', ' ');
+                                }
+                            });
+                        }
+                    </script>
+                <?php
                 } else {
                     echo "<p class='no-results'>Sorry, articles not found...</p>";
                 }

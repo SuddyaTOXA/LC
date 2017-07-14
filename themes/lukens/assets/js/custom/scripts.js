@@ -1,16 +1,14 @@
 jQuery(document).ready(function($) {
     $(function(){
         // header fade
-        $(function() {
-           var header = $('#header');
+       var header = $('#header');
            setTimeout(function(){
-           	header.addClass('show');
+                header.addClass('show');
            },800);
-        });
 
         //header background on scroll
         var header = $('#header');
-        $(window).on('scroll', function() {
+        $(window).on('load scroll', function() {
            var st2 = $(this).scrollTop();
 
            if (st2 > 0) {
@@ -48,11 +46,15 @@ jQuery(document).ready(function($) {
 
 
                     box.each(function () {
-                        if ( $(this).outerHeight() > maxHeight ) {
-                            maxHeight = $(this).outerHeight();
+                        if ($(window).width() > 767) {
+                            if ( $(this).outerHeight() > maxHeight ) {
+                                maxHeight = $(this).outerHeight();
+                            }
+                            imgBox.css('height', maxHeight);
+                        } else {
+                            imgBox.css('height', ' ');
                         }
                     });
-                    imgBox.css('height', maxHeight)
                 }
             })
 
@@ -63,9 +65,13 @@ jQuery(document).ready(function($) {
                         imgBox = $('.study-img-wrap');
 
                     box.each(function (i) {
-                        var maxHeight = 0;
+                        if ($(window).width() > 767) {
+                            var maxHeight = 0;
                             maxHeight = box.eq(i).outerHeight();
                             imgBox.eq(i).css('height', maxHeight);
+                        } else {
+                            imgBox.css('height', ' ');
+                        }
                     });
                 }
             })

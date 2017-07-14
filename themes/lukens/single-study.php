@@ -63,7 +63,7 @@ define('ID', get_the_id());
         <ul class="case-post-nav">
                 <li>
                     <?php if ($previous_post) { ?>
-                        <a href="<?= $previous_post->guid ?>" title="<?= esc_attr($previous_post->post_title) ?>">
+                        <a href="<?=  get_the_permalink($previous_post->ID) ?>" title="<?= esc_attr($previous_post->post_title) ?>">
                             <span class="case case-prev">PREV</span>
                             <span class="case-post-title"><?= $previous_post->post_title ?></span>
                         </a>
@@ -77,7 +77,7 @@ define('ID', get_the_id());
 
             <li>
                 <?php if ($next_post) { ?>
-                    <a href="<?= $next_post->guid ?>" title="<?= esc_attr($next_post->post_title) ?>">
+                    <a href="<?=  get_the_permalink($next_post->ID) ?>" title="<?= esc_attr($next_post->post_title) ?>">
                         <span class="case case-next">NEXT</span>
                         <span class="case-post-title"><?= $next_post->post_title ?></span>
                     </a>

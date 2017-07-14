@@ -5,14 +5,12 @@
 
 <li>
     <div class="post-box">
-        <?php if (has_post_thumbnail()) { ?>
-            <div class="post-img-wrap">
-                <a href="<?php the_permalink(); ?>" title="<?php echo $title; ?>">
-                    <?php the_post_thumbnail('blog-thumb'); ?>
-                </a>
-                <span class="post-date"><?php the_date(); ?></span>
-            </div>
-        <? } ?>
+        <div class="post-img-wrap">
+            <a href="<?php the_permalink(); ?>" title="<?php echo $title; ?>">
+                <?php the_post_thumbnail('blog-thumb'); ?>
+            </a>
+            <span class="post-date"><?php the_date(); ?></span>
+        </div>
         <div class="post-desc-box">
             <h3 class="post-title"><?php echo $title; ?></h3>
             <div class="post-desc">

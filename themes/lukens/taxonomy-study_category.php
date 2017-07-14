@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Case Studies
- */
 get_header();
 
 $title = get_field('title');
@@ -51,6 +48,28 @@ $bottom_btn = get_field('bottom_button');
                             get_template_part('loop', 'study');
                         }
                     echo '</ul>';
+                    ?>
+                    <script>
+                        //for case study box
+                        if (jQuery('.study-list').length) {
+                            var maxHeight = 0,
+                                box = jQuery('.study-left-box'),
+                                imgBox = jQuery('.study-img-wrap');
+
+
+                            box.each(function () {
+                                if (jQuery(window).width() > 767) {
+                                    if ( jQuery(this).outerHeight() > maxHeight ) {
+                                        maxHeight = jQuery(this).outerHeight();
+                                    }
+                                    imgBox.css('height', maxHeight);
+                                } else {
+                                    imgBox.css('height', ' ');
+                                }
+                            });
+                        }
+                    </script>
+                    <?php
                 }
             ?>
         </div>

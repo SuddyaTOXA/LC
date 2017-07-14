@@ -128,7 +128,24 @@
                             get_template_part('loop', 'study');
                         }
                         echo '</ul>';
+                        ?>
+                        <script>
+                            if (jQuery('.recent-case-post').length) {
+                                var box = jQuery('.study-left-box'),
+                                    imgBox = jQuery('.study-img-wrap');
 
+                                box.each(function (i) {
+                                    if (jQuery(window).width() > 767) {
+                                        var maxHeight = 0;
+                                        maxHeight = box.eq(i).outerHeight();
+                                        imgBox.eq(i).css('height', maxHeight);
+                                    } else {
+                                        imgBox.css('height', ' ');
+                                    }
+                                });
+                            }
+                        </script>
+                        <?php
                     }
                     wp_reset_query();
                 ?>
