@@ -14,14 +14,14 @@
   font-style: normal; }
 @font-face {
   font-family: 'SFNS Display';
-  src: url("../fonts/HelveticaNeueDeskInterface-Regular.eot");
-  src: url("../fonts/HelveticaNeueDeskInterface-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueDeskInterface-Regular.woff") format("woff"), url("../fonts/HelveticaNeueDeskInterface-Regular.ttf") format("truetype"), url("../fonts/HelveticaNeueDeskInterface-Regular.svg#.HelveticaNeueDeskInterface-Regular") format("svg");
+  src: url("../HelveticaNeueDeskInterface-Regular.eot");
+  src: url("../HelveticaNeueDeskInterface-Regular.eot?#iefix") format("embedded-opentype"), url("../HelveticaNeueDeskInterface-Regular.woff") format("woff"), url("../HelveticaNeueDeskInterface-Regular.ttf") format("truetype"), url("../HelveticaNeueDeskInterface-Regular.svg#.HelveticaNeueDeskInterface-Regular") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
-  src: url("../fonts/Lato-Semibold.eot");
-  src: url("../fonts/Lato-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Semibold.woff") format("woff"), url("../fonts/Lato-Semibold.ttf") format("truetype"), url("../fonts/Lato-Semibold.svg#Lato-Semibold") format("svg");
+  src: url("../Lato-Semibold.eot");
+  src: url("../Lato-Semibold.eot?#iefix") format("embedded-opentype"), url("../Lato-Semibold.woff") format("woff"), url("../Lato-Semibold.ttf") format("truetype"), url("../Lato-Semibold.svg#Lato-Semibold") format("svg");
   font-weight: 600;
   font-style: normal; }
 @font-face {
@@ -1007,7 +1007,7 @@ select {
   -o-transition-delay: 0.35s;
   transition-delay: 0.35s; }
   .admin-bar .mobile-menu-wrap {
-    top: 97px; }
+    top: 108px; }
   .mobile-menu-wrap.showing {
     height: 100%;
     width: 100%;
@@ -1039,23 +1039,23 @@ select {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: -100%;
+  right: -100%;
   z-index: 2;
   padding-bottom: 100px;
   background-color: white;
-  -webkit-transition: left 0.35s;
-  -khtml-transition: left 0.35s;
-  -moz-transition: left 0.35s;
-  -ms-transition: left 0.35s;
-  -o-transition: left 0.35s;
-  transition: left 0.35s;
+  -webkit-transition: right 0.35s;
+  -khtml-transition: right 0.35s;
+  -moz-transition: right 0.35s;
+  -ms-transition: right 0.35s;
+  -o-transition: right 0.35s;
+  transition: right 0.35s;
   overflow: auto; }
   .showing .mobile-menu-box {
-    left: 0; }
+    right: 0; }
 
 .mobile-menu-toggle {
   position: absolute;
-  left: 0;
+  right: 0;
   top: -10px;
   height: 65px;
   width: 65px;
@@ -1162,14 +1162,11 @@ select {
   padding-bottom: 20px; }
   .mobile-menu > li {
     position: relative;
-    display: block;
-    border-bottom: 1px solid rgba(42, 66, 90, 0.4); }
-    .mobile-menu > li:last-child {
-      border-bottom: none; }
+    display: block; }
     .mobile-menu > li a {
       position: relative;
       display: block;
-      text-transform: capitalize;
+      text-transform: uppercase;
       padding: 10px 25px 8px;
       color: #00334E;
       font-size: 16px;
@@ -1289,7 +1286,6 @@ select {
     position: relative;
     display: inline-block; }
     .footer-menu > li a {
-      display: inline-block;
       position: relative;
       text-transform: uppercase;
       padding: 8px 12px 9px;
@@ -1588,22 +1584,14 @@ select {
     .recent-case-post > li:first-child {
       z-index: 10;
       opacity: 1; }
-    .recent-case-post > li:nth-child(2), .recent-case-post > li:nth-child(3) {
-      position: absolute;
-      margin: 0 52px; }
-      .recent-case-post > li:nth-child(2) .study-desc, .recent-case-post > li:nth-child(3) .study-desc {
-        overflow: hidden;
-        max-height: 60px; }
-      .recent-case-post > li:nth-child(2) .study-tag, .recent-case-post > li:nth-child(3) .study-tag {
-        overflow: hidden;
-        max-height: 40px; }
-      .recent-case-post > li:nth-child(2) a.study-title, .recent-case-post > li:nth-child(2) .study-title, .recent-case-post > li:nth-child(3) a.study-title, .recent-case-post > li:nth-child(3) .study-title {
-        max-height: 40px;
-        overflow: hidden; }
     .recent-case-post > li:nth-child(2) {
-      top: 0; }
+      position: absolute;
+      top: 0;
+      margin: 0 52px; }
     .recent-case-post > li:nth-child(3) {
-      bottom: 0; }
+      position: absolute;
+      bottom: 0;
+      margin: 0 52px; }
 
 .table-inner-box {
   padding-top: 50px;
@@ -1820,7 +1808,6 @@ select {
     margin-bottom: 97px;
     vertical-align: middle; }
     .our-clients-logo-list > li img {
-      max-width: 100%;
       -webkit-transition: 0.35s;
       -khtml-transition: 0.35s;
       -moz-transition: 0.35s;
@@ -2036,12 +2023,10 @@ select {
         height: 165px; }
 
 .form-box {
-  overflow: hidden;
-  padding-bottom: 10px;
-  text-align: left; }
+  overflow: hidden; }
 
 .form-page-wrap .form-btn-box {
-  margin-top: 60px; }
+  margin-top: 70px; }
 
 .section-location {
   padding-top: 40px;
@@ -2312,14 +2297,6 @@ select {
 .section-services-list .container {
   max-width: 1100px;
   margin: 0 auto; }
-.section-services-list .vc_section {
-  margin-right: 0;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0; }
-.section-services-list .vc_row {
-  margin-right: 0;
-  margin-left: 0; }
 .section-services-list .client.container {
   max-width: 1180px;
   margin: 0 auto; }
@@ -2372,7 +2349,7 @@ select {
 .section-service {
   overflow: hidden;
   padding-top: 107px;
-  padding-bottom: 110px; }
+  padding-bottom: 50px; }
   .section-service .container {
     max-width: 1040px; }
 
@@ -3057,9 +3034,7 @@ a.study-title,
   margin: 0 auto; }
 .section-about .vc_section {
   margin-right: 0;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0; }
+  margin-left: 0; }
 
 .person-name {
   font-size: 31px;
@@ -3088,40 +3063,25 @@ a.study-title,
         float: none;
         max-width: 100%; }
 
-  .section-contact-page {
-    text-align: center; }
-    .section-contact-page .container {
-      max-width: 542px; }
-    .section-contact-page .line.left:after {
-      left: -20px; }
-
-  #sidebar {
-    max-width: 220px; }
-
-  .content-box-wrap {
-    max-width: calc(100% - 220px);
-    padding-right: 40px; }
-
-  .section-our-clients .left-box, .section-our-clients .right-box {
-    width: 50%; }
-
-  .our-clients-logo-list > li {
-    display: inline-block;
-    padding: 0 20px;
-    margin-bottom: 40px; }
-
-  .section-our-clients .right-box .table-inner-box {
-    margin: 0 auto; }
-
-  .our-clients-logo-list {
-    margin-bottom: -40px; } }
+  .form-page-wrap {
+    max-width: 502px; } }
 @media all and (max-width: 1024px) {
-  .header {
-    background-color: #ffffff; }
-    .header .light {
-      display: none !important; }
-    .header .dark {
-      display: block !important; }
+  .location-title {
+    font-size: 32px; }
+
+  .location {
+    font-size: 19px; } }
+@media all and (max-width: 767px) {
+  .wrapper {
+    margin-top: 65px; }
+
+  .container {
+    max-width: 320px;
+    padding: 0 15px; }
+
+  .section-contact-page .container,
+  .section-location .container {
+    max-width: 320px; }
 
   .desktop {
     display: none !important; }
@@ -3137,99 +3097,11 @@ a.study-title,
     padding-top: 10px;
     padding-bottom: 12px; }
 
-  .header .container {
-    max-width: 100%; }
-
   .logo {
-    float: right;
     margin-top: 15px;
     max-width: 197px; }
 
-  .location-title {
-    font-size: 32px; }
-
-  .location {
-    font-size: 19px; }
-
-  .section-blog-list .section-title {
-    font-size: 62px; }
-    .section-blog-list .section-title.line:after {
-      border-bottom: 12px; }
-
-  .post-title {
-    font-size: 29px; }
-
-  .section-blog {
-    padding-top: 60px;
-    padding-bottom: 100px; }
-
-  .blog-title {
-    font-size: 40px; }
-
-  .share-btn-list > li a .fa {
-    font-size: 24px; }
-  .share-btn-list > li a .fa-facebook {
-    font-size: 26px; }
-  .share-btn-list > li a .fa-twitter {
-    font-size: 29px; }
-
-  .author,
-  .post-date {
-    font-size: 18px; }
-
-  .section-service {
-    padding-top: 60px;
-    padding-bottom: 80px; }
-
-  .service-title {
-    font-size: 62px; }
-
-  .service-sub-title {
-    font-size: 29px; }
-
-  .study-left-box {
-    padding-left: 20px;
-    padding-right: 20px; }
-
-  .study-info-box {
-    width: 170px; }
-
-  .study-description {
-    line-height: 1; } }
-@media all and (max-width: 991px) {
-  .content img.alignleft, .content img.alignright, .content img.aligncenter {
-    float: none;
-    max-width: 100%;
-    display: block;
-    margin: -6px auto 35px;
-    clear: both; } }
-@media all and (max-width: 860px) {
-  .post-img-wrap + .post-desc-box {
-    padding-left: 30px; }
-
-  .study-img-wrap {
-    width: 250px; }
-
-  .our-clients-logo-list > li {
-    width: 100%;
-    padding: 0; } }
-@media all and (max-width: 767px) {
-  .wrapper {
-    margin-top: 65px; }
-
-  .container {
-    max-width: 320px;
-    padding: 0 15px; }
-
-  .section-contact-page .container,
-  .section-location .container {
-    max-width: 320px; }
-
-  .section-contact-page {
-    padding-top: 60px; }
-
   .footer-menu > li {
-    display: block;
     margin-bottom: 10px; }
 
   #footer {
@@ -3270,7 +3142,7 @@ a.study-title,
     font-size: 19px; }
 
   .section-title {
-    font-size: 38px !important; }
+    font-size: 38px; }
 
   .section-our-services .section-title.line:after {
     left: 30px; }
@@ -3295,322 +3167,8 @@ a.study-title,
 
   .content {
     font-size: 16px; }
-    .content blockquote {
-      padding-top: 55px;
-      font-size: 19px; }
 
   .location-list > li {
-    width: 100%; }
-
-  .section-page-banner .container {
-    max-width: 100%; }
-
-  .banner-box {
-    padding: 0; }
-
-  .banner-table {
-    max-width: 320px;
-    margin: 0 auto;
-    padding: 70px 0 0; }
-
-  .banner-title {
-    font-size: 46px; }
-    .banner-title.line:after {
-      bottom: 3px; }
-
-  .short-info {
-    font-size: 20px; }
-
-  .section-location {
-    padding-bottom: 60px; }
-
-  .location-list {
-    margin-bottom: 20px; }
-
-  .location-title {
-    margin-bottom: 2px;
-    font-size: 26px; }
-
-  .location {
-    font-size: 17px; }
-
-  .section-blog-list .container {
-    max-width: 320px; }
-  .section-blog-list .section-title {
-    font-size: 52px; }
-    .section-blog-list .section-title.line:after {
-      bottom: 10px; }
-
-  .post-list > li {
-    margin-bottom: 70px; }
-
-  .post-img-wrap {
-    float: none;
-    margin-bottom: 12px;
-    max-width: 100%;
-    text-align: center;
-    width: 100%; }
-    .post-img-wrap img {
-      width: 100%;
-      height: auto; }
-
-  .post-date {
-    margin-top: 2px;
-    font-size: 16px;
-    text-align: left; }
-
-  .post-img-wrap + .post-desc-box {
-    padding: 0; }
-
-  .post-title {
-    margin-bottom: 4px;
-    font-size: 26px; }
-
-  .post-desc {
-    font-size: 16px; }
-
-  .section-blog {
-    padding-bottom: 120px; }
-    .section-blog .container {
-      position: relative;
-      max-width: 320px; }
-    .section-blog .share-box {
-      float: none;
-      position: absolute;
-      bottom: -40px;
-      left: 15px; }
-
-  .blog-img-wrap {
-    height: 200px; }
-
-  .blog-info-box {
-    margin-bottom: 10px; }
-
-  .blog-title {
-    font-size: 28px; }
-
-  .share-btn-list > li a .fa {
-    font-size: 24px; }
-  .share-btn-list > li a .fa-facebook {
-    font-size: 26px; }
-  .share-btn-list > li a .fa-twitter {
-    font-size: 29px; }
-
-  .author,
-  .post-date {
-    font-size: 14px; }
-
-  .section-service {
-    padding-top: 60px;
-    padding-bottom: 80px; }
-    .section-service .container {
-      max-width: 320px; }
-
-  .content-box-wrap {
-    float: none;
-    max-width: 100%;
-    padding-right: 0;
-    margin-bottom: 40px; }
-
-  .service-title {
-    margin-bottom: 4px;
-    font-size: 52px; }
-
-  .service-sub-title {
-    margin-bottom: 4px;
-    font-size: 26px; }
-
-  #sidebar {
-    float: none;
-    max-width: 100%; }
-
-  .widget > h4 {
-    font-size: 18px;
-    padding-bottom: 8px; }
-
-  .section-about .container,
-  .section-study .container {
-    max-width: 320px; }
-
-  .section-study-list {
-    padding-top: 40px;
-    padding-bottom: 75px; }
-    .section-study-list .container {
-      max-width: 320px; }
-
-  .study-img-wrap {
-    display: block;
-    width: 100%;
-    float: none;
-    height: 180px;
-    min-height: 180px; }
-
-  .study-left-box {
-    padding-left: 10px;
-    padding-right: 10px; }
-
-  .study-logo-wrap {
-    min-height: auto; }
-
-  .study-logo {
-    max-width: 130px; }
-
-  .study-info-box {
-    position: relative;
-    float: none;
-    width: 100%;
-    padding: 10px 0 10px; }
-
-  .study-results {
-    position: absolute;
-    top: 5px;
-    left: 150px;
-    max-width: 120px; }
-
-  .study-desc-box {
-    padding-top: 15px;
-    padding-bottom: 15px; }
-
-  .study-list {
-    margin-top: 35px; }
-    .study-list > li {
-      margin-bottom: 40px; }
-
-  .section-home-case-studies {
-    overflow: hidden;
-    padding-top: 60px;
-    padding-bottom: 80px; }
-
-  .recent-case-post {
-    margin: 140px auto 140px;
-    padding-top: 0;
-    padding-bottom: 0; }
-    .recent-case-post > li {
-      position: relative;
-      z-index: 5;
-      opacity: .6; }
-      .recent-case-post > li:first-child {
-        z-index: 10;
-        opacity: 1; }
-      .recent-case-post > li:nth-child(2), .recent-case-post > li:nth-child(3) {
-        max-width: 290px;
-        position: absolute;
-        margin: 0; }
-        .recent-case-post > li:nth-child(2) .study-desc, .recent-case-post > li:nth-child(3) .study-desc {
-          overflow: hidden;
-          max-height: 60px; }
-        .recent-case-post > li:nth-child(2) .study-tag, .recent-case-post > li:nth-child(3) .study-tag {
-          overflow: hidden;
-          max-height: 40px; }
-        .recent-case-post > li:nth-child(2) a.study-title, .recent-case-post > li:nth-child(2) .study-title, .recent-case-post > li:nth-child(3) a.study-title, .recent-case-post > li:nth-child(3) .study-title {
-          max-height: 20px; }
-        .recent-case-post > li:nth-child(2) .study-img-wrap, .recent-case-post > li:nth-child(3) .study-img-wrap {
-          min-height: 140px; }
-      .recent-case-post > li:nth-child(2) {
-        top: -100px;
-        left: -100px; }
-      .recent-case-post > li:nth-child(3) {
-        top: 100px;
-        bottom: auto;
-        right: -100px; }
-
-  .section-the-latest {
-    padding-top: 60px;
-    padding-bottom: 160px; }
-    .section-the-latest .container {
-      position: relative;
-      max-width: 320px;
-      display: block; }
-    .section-the-latest .right-box,
-    .section-the-latest .left-box {
-      display: block;
-      width: 100%; }
-      .section-the-latest .right-box .table-inner-box,
-      .section-the-latest .left-box .table-inner-box {
-        padding: 0; }
-    .section-the-latest a.btn-grey-inverse, .section-the-latest .btn-grey-inverse {
-      width: 200px;
-      position: absolute;
-      bottom: -120px;
-      left: 50%;
-      -webkit-transform: translate(-50%, 0);
-      -khtml-transform: translate(-50%, 0);
-      -moz-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-      -o-transform: translate(-50%, 0);
-      transform: translate(-50%, 0); }
-
-  .recent-blog-post > li:nth-child(odd) {
-    left: 40px; }
-
-  .recent-blog-box {
-    height: auto; }
-    .recent-blog-box .s-coll {
-      position: absolute;
-      width: 300px;
-      left: 200px;
-      top: 0; }
-
-  .f-coll.copy {
-    display: none; }
-
-  .wrapper {
-    overflow: hidden; }
-
-  .section-our-clients .container {
-    max-width: 320px; }
-
-  .section-our-clients {
-    background: #f3f3f3; }
-    .section-our-clients .table-inner-box {
-      position: relative;
-      z-index: 10; }
-    .section-our-clients .left-box,
-    .section-our-clients .right-box {
-      position: relative;
-      width: 100%; }
-    .section-our-clients .left-box {
-      display: table-footer-group; }
-    .section-our-clients .right-box:after {
-      position: absolute;
-      z-index: 5;
-      content: '';
-      width: 500%;
-      height: 100%;
-      top: 0;
-      left: -150%;
-      background-color: #79a22e; }
-
-  .our-clients-list > li {
-    font-size: 16px; }
-
-  .current-positions > div {
-    padding-left: 0 !important; }
-
-  .vc_column_container > .vc_column-inner {
-    padding-left: 0 !important;
-    padding-right: 0 !important; } }
-@media all and (max-width: 600px) {
-  .section-page-banner:after {
-    position: absolute;
-    content: '';
-    width: 541px;
-    height: 228px;
-    left: 50%;
-    bottom: 0;
-    background-image: url(../../img/whitebrush-tamed-1.png);
-    -webkit-transform: translate(-50%, 0);
-    -khtml-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 5; }
-
-  .banner-box {
-    background-image: none; } }
+    width: 100%; } }
 
 /*# sourceMappingURL=screen.css.map */

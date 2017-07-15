@@ -19,14 +19,28 @@ define('ID', get_the_id());
         <?php
             global $wp_query;
 
+            $tags = wp_get_post_terms($post->ID, 'case_tag');
+            if ($tags) {
+                $first_tag = $tags[0]->term_id;
+            }
+
             $paged = get_query_var('paged') ? get_query_var('paged') : 1;
             $args = array(
                 'post_type'     => 'study',
                 'post_status'   => 'publish',
+                'post__not_in'  => array($post->ID),
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'case_tag',
+                        'field'    => 'id',
+                        'terms'    => array($first_tag)
+                    )
+                ),
                 'orderby'       => 'date',
-                'order'         => 'ASC',
+                'order'         => 'DESC',
                 'posts_per_page' => 2,
                 'paged'         => $paged,
+                'ignore_sticky_posts' => true
             );
             $new_query = new WP_Query( $args );
 
@@ -36,10 +50,10 @@ define('ID', get_the_id());
                     $new_query->the_post();
                     ?>
                     <li>
-                        <a href="<?= get_the_permalink() ?>" title="<?= esc_attr(get_the_title()) ?>">
+                        <a href="<?= get_the_permalink() ?>" title="<?= esc_attr(get_the_title()); ?>">
                             <span class="related-case-box">
                                 <?php if (has_post_thumbnail()) { ?>
-                                    <span class="related-case-img-box" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>)">
+                                    <span class="related-case-img-box" style="background-image: url(<?= get_the_post_thumbnail_url(); ?>)">
                                         <?php the_post_thumbnail('full'); ?>
                                     </span>
                                 <?php } ?>
@@ -56,6 +70,21 @@ define('ID', get_the_id());
             }
             wp_reset_query();
         ?>
+            <script>
+                //for related list boxes
+                if (jQuery('.related-case-list').length) {
+                    var maxHeight = 0,
+                        box = jQuery('.related-case-decs'),
+                        imgBox = jQuery('.related-case-img-box');
+
+                    box.each(function () {
+                        if ( jQuery(this).outerHeight() > maxHeight ) {
+                            maxHeight = jQuery(this).outerHeight();
+                        }
+                    });
+                    imgBox.css('height', maxHeight)
+                }
+            </script>
         <?php
             $previous_post = get_previous_post();
             $next_post = get_next_post();
@@ -63,21 +92,21 @@ define('ID', get_the_id());
         <ul class="case-post-nav">
                 <li>
                     <?php if ($previous_post) { ?>
-                        <a href="<?=  get_the_permalink($previous_post->ID) ?>" title="<?= esc_attr($previous_post->post_title) ?>">
+                        <a href="<?= get_the_permalink($previous_post->ID); ?>" title="<?= esc_attr($previous_post->post_title); ?>">
                             <span class="case case-prev">PREV</span>
                             <span class="case-post-title"><?= $previous_post->post_title ?></span>
                         </a>
                     <?php } ?>
                 </li>
             <li class="center">
-                <a href="<?= get_the_permalink(10) ?>" title="ALL CASE STUDIES" class="btn btn-green-inverse">
+                <a href="<?= get_the_permalink(10); ?>" title="ALL CASE STUDIES" class="btn btn-green-inverse">
                     ALL CASE STUDIES
                 </a>
             </li>
 
             <li>
                 <?php if ($next_post) { ?>
-                    <a href="<?=  get_the_permalink($next_post->ID) ?>" title="<?= esc_attr($next_post->post_title) ?>">
+                    <a href="<?= get_the_permalink($next_post->ID); ?>" title="<?= esc_attr($next_post->post_title); ?>">
                         <span class="case case-next">NEXT</span>
                         <span class="case-post-title"><?= $next_post->post_title ?></span>
                     </a>
@@ -87,9 +116,6 @@ define('ID', get_the_id());
     </div>
 </section>
 
+<?php get_template_part('inc/section', 'get-in-touch'); ?>
+
 <?php get_footer(); ?>
-
-
-
-
-

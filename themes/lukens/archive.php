@@ -1,54 +1,36 @@
-<?php
-/**
-Template Name: Archives
-*/
-get_header();
+<?php get_header();
 
-$title = get_field('title');
-$content = get_field('content');
+    $title = get_field('title') ? get_field('title') : get_the_archive_title();
+    $content = get_field('content');
 ?>
 
-<?php get_template_part('inc/banner'); ?>
+    <?php get_template_part('inc/banner'); ?>
 
     <section class="section-blog-list" id="main-content">
         <div class="container">
             <?php
-            if ($title) {
-                echo '<h2 class="section-title line left">'. $title .'</h2>';
-            }
-            if ($content) {
-                echo '<div class="content-wrap"><div class="content">'. $content .'</div></div>';
-            }
-
-            global $wp_query;
-            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-            $args = array(
-                'post_type'     => 'post',
-                'post_status'   => 'publish',
-                'orderby'       => 'date',
-                'order'         => 'DESC',
-                'paged'         => $paged,
-            );
-            $new_query = new WP_Query( $args );
-
-            if ($new_query->have_posts()) {
-                echo '<ul class="post-list">';
-                while ($new_query->have_posts()) {
-                    $new_query->the_post();
-                    get_template_part('loop', 'post');
+                if ($title) {
+                    echo '<h2 class="section-title line left">'. $title .'</h2>';
                 }
-                echo '</ul>';
-                wp_pagenavi( array( 'query' => $new_query ) );
+                if ($content) {
+                    echo '<div class="content-wrap"><div class="content">'. $content .'</div></div>';
+                }
 
-            } else {
-                echo "<p class='no-results'>Sorry, articles not found...</p>";
-            }
-            wp_reset_query();
+                if (have_posts()) {
+                    echo '<ul class="post-list">';
+
+                        while ( have_posts() ) : the_post();
+                            get_template_part('loop', 'post');
+                        endwhile;
+
+                    echo '</ul>';
+                    wp_pagenavi();
+
+                } else {
+                    echo "<p class='no-results'>Sorry, no posts found...</p>";
+                }
             ?>
         </div>
     </section>
-
-
-
 
 <?php get_footer(); ?>

@@ -41,7 +41,7 @@ $content = get_field('content');
                     wp_pagenavi( array( 'query' => $new_query ) );
 
                 } else {
-                    echo "<p class='no-results'>Sorry, articles not found...</p>";
+                    echo "<p class='no-results'>Sorry, no articles found...</p>";
                 }
                 wp_reset_query();
             ?>

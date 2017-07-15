@@ -1,4 +1,5 @@
 <?php get_header();
+
     $hero_title     = get_field('hero_title');
     $hero_sub_title     = get_field('hero_sub_title');
     $hero_image    = get_field('hero_image');
@@ -128,7 +129,7 @@
                             get_template_part('loop', 'study');
                         }
                         echo '</ul>';
-                        ?>
+                    ?>
                         <script>
                             if (jQuery('.recent-case-post').length) {
                                 var box = jQuery('.study-left-box'),
@@ -145,7 +146,7 @@
                                 });
                             }
                         </script>
-                        <?php
+                    <?php
                     }
                     wp_reset_query();
                 ?>
@@ -209,7 +210,7 @@
                                             <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
                                                 <?php the_title('<span class="recent-blog-title">', '</span>'); ?>
                                             </a>
-                                            <span class="recent-blog-name"><?php the_author_posts_link(); ?></span>
+                                            <span class="recent-blog-name"><?php the_author(); ?></span>
                                             <?php get_template_part('inc/sharehome'); ?>
                                         </div>
                                         <div class="s-coll" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">

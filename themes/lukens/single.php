@@ -18,7 +18,7 @@ $share_btn = get_field('share_btn');
 
             <div class="blog-info-box">
                 <div class="info-left-box">
-                    <span class="author">By <?php the_author_posts_link(); ?></span>
+                    <span class="author">By <?php the_author(); ?></span>
                     <span class="post-date"><?php the_date() ?></span>
                 </div>
 
