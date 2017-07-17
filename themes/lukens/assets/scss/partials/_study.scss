@@ -91,9 +91,23 @@
       &:last-child {
         margin-bottom: 0;
       }
+      a {
+        color: $color-text4;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          .study-box {
+            box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.5);
+          }
+          .study-title {
+            color: $color-text3;
+          }
+        }
+      }
     }
   }
 .study-box {
+  position: relative;
   overflow: hidden;
   display: table;
   width: 100%;
@@ -101,29 +115,36 @@
   background-color: $white;
   box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
   @include border-radius($radius-small);
+  @include transition($transition-other);
 }
     .study-left-box {
       overflow: hidden;
-      //padding: 39px 60px 30px 30px;
+      display: block;
       padding-left: 27px;
       padding-right: 60px;
     }
       .study-info-box {
         float: left;
+        display: block;
         width: 208px;
         padding-top: 29px;
-        padding-bottom: 30px;
+        padding-bottom: 90px;
         padding-right: 30px;
       }
         .study-logo-wrap {
-          min-height: 127px;
+          display: block;
         }
           .study-logo {
+            display: inline-block;
             max-width: 140px;
             margin-bottom: 5px;
+            height: 100px;
+            line-height: 100px;
             img {
               max-width: 100%;
               height: auto;
+              max-height: 80px;
+              vertical-align: middle;
             }
           }
           a.study-logo-link,
@@ -134,13 +155,18 @@
             font-weight: 700;
             font-size: 10px;
             color: #bebebe;
-            &:hover,
-            &:focus {
-              color: $color-text3;
-              text-decoration: none;
-            }
+            //&:hover,
+            //&:focus {
+            //  color: $color-text3;
+            //  text-decoration: none;
+            //}
           }
           .study-results {
+            position: absolute;
+            bottom: 24px;
+            left: 25px;
+            display: block;
+            max-width: 178px;
             color: #79a22e;
             font-family: $font-main;
           }
@@ -177,8 +203,9 @@
               }
         .study-desc-box {
           overflow: hidden;
+          display: block;
           padding-top: 39px;
-          padding-bottom: 30px;
+          padding-bottom: 70px;
         }
           .study-purposes {
             display: block;
@@ -194,27 +221,35 @@
             font-weight: 900;
             color: $color-text4;
             line-height: 1;
-            &:hover,
-            &:focus {
-              text-decoration: none;
-              color: $color-text3;
-            }
+            @include transition($transition-link);
+            //&:hover,
+            //&:focus {
+            //  text-decoration: none;
+            //  color: $color-text3;
+            //}
           }
           .study-desc {
             display: block;
             margin-bottom: 10px;
-            min-height: 74px;
+            min-height: 70px;
             font-size: 14px;
             line-height: 1.25;
             word-spacing: .02em;
           }
           .study-tag {
-            ul {
-              line-height: 1;
-              > li {
+            position: absolute;
+            left: 230px;
+            bottom: 26px;
+            display: block;
+            max-width: 255px;
+            .study-tag-list {
+              display: block;
+              line-height: .7;
+              > span {
                 display: inline-block;
                 padding: 3px 5px;
                 font-size: 10px;
+                line-height: 1;
                 font-weight: 700;
                 color: #4c5353;
                 text-transform: uppercase;
@@ -287,19 +322,19 @@
   box-shadow: -20px 10px 50px rgba(0, 0, 0, 0.2);
 }
 .section-related-case {
-  padding-top: 55px;
+  padding-top: 60px;
   text-align: center;
   background-color: #f3f3f3;
   .container {
     max-width: 1086px;
   }
   .section-title {
-    margin-bottom: 69px;
+    margin-bottom: 73px;
     font-size: 32px;
     color: #03263d;
     &.line {
       &:after {
-        bottom: 6px;
+        bottom: 1px;
       }
     }
   }

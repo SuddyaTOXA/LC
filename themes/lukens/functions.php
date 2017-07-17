@@ -8,17 +8,11 @@ function load_style_script(){
 
     wp_enqueue_script('modernizr.min', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), '2.8.3', false );
     wp_enqueue_script('smooth-scroll.min', get_template_directory_uri() . '/assets/js/smooth-scroll.min.js', array(), '10.2.0', true );
+    wp_enqueue_script('magnific', get_template_directory_uri() . '/assets/js/custom/magnific.js', array(), '1.1.0', true );
     wp_enqueue_script('scripts', get_template_directory_uri() . '/assets/js/custom/scripts.js', array('jquery'), null, true );
 }
 add_action('wp_enqueue_scripts', 'load_style_script');
 
-
-// loading styles and scripts for admin panel
-function load_admin_style_script(){
-    wp_enqueue_style('custom-wp-admin-style', get_template_directory_uri() . '/css/custom-wp-admin-style.css', array('acf-input') );
-    wp_enqueue_script('custom-wp-admin-script', get_template_directory_uri() . '/js/custom-wp-admin-script.js', array('jquery'), null, true );
-}
-add_action('admin_enqueue_scripts', 'load_admin_style_script');
 
 
 // add ie conditional html5 shiv to header
@@ -134,30 +128,6 @@ function register_my_widgets(){
 add_action( 'widgets_init', 'register_my_widgets' );
 
 
-// pagination function
-function my_pagenavi() {
-    global $wp_query;
-
-    $big = 999999999;
-
-    $args = array(
-        'base'          => str_replace( $big, '%#%', get_pagenum_link( $big ) )
-        ,'format'       => '?paged=%#%'
-        ,'current'      => max( 1, get_query_var('paged') )
-        ,'total'        => $wp_query->max_num_pages
-        ,'end_size'     => 0
-        ,'mid_size'     => 2
-        ,'type'         => 'list'
-        ,'prev_text'    => '<'
-        ,'next_text'    => '>'
-    );
-
-    $result = paginate_links( $args );
-    $result = str_replace( '/page/1/', '', $result );
-
-    echo $result;
-}
-
 
 /* Хак на перезапись параметра guid при публикации или обновлении поста в админке (записывается пермалинк в текущей структуре)
 --------------------------------------------------------------------------------------------------------------------------------- */
@@ -171,77 +141,6 @@ function guid_write( $id ){
 }
 add_action ('save_post', 'guid_write', 100);
 
-
-
-// neighbor posts
-function neighbor_posts($post_id) {
-    global $wpdb;
-
-    // Нам нужна категория поста. Если у поста несколько категорий, будет взята первая
-    $category = get_the_category($post_id);
-    $cat_id = $category[0]->cat_ID;
-
-    // Узнаём сколько записей добавлено до
-    $all_left_num = $wpdb->get_var("select count($wpdb->posts.ID) from $wpdb->posts join $wpdb->term_relationships on  " .
-                           "($wpdb->term_relationships.object_id = $wpdb->posts.ID) where ($wpdb->posts.ID < $post_id) " .
-                           "and ($wpdb->term_relationships.term_taxonomy_id = $cat_id) and ($wpdb->posts.post_status='publish')");
-    // А сколько после
-    $all_right_num = $wpdb->get_var("select count($wpdb->posts.ID) from $wpdb->posts join $wpdb->term_relationships on  " .
-                           "($wpdb->term_relationships.object_id = $wpdb->posts.ID) where ($wpdb->posts.ID > $post_id) " .
-                           "and ($wpdb->term_relationships.term_taxonomy_id = $cat_id) and($wpdb->posts.post_status='publish')");
-
-    $num_left = 1;
-    $num_right = 2; // Нам нужно по две записи с каждой стороны от нашей
-
-    if ($all_left_num < 1) // Если слева нет 1 записи, компенсируем правыми
-        $num_right += (1 - $all_left_num);
-    if ($all_right_num < 2) // Если справа нет 2 записей, компенсируем левыми
-        $num_left += (2 - $all_right_num);
-
-    // Теперь можно запросить сами записи. Для левых (предыдущих) задаём сортировку по ID по убыванию
-    // Таким образом гарантируем, что это будут именно ближайшие записи
-    $left = $wpdb->get_results("select $wpdb->posts.* from $wpdb->posts join $wpdb->term_relationships on  " .
-                           "($wpdb->term_relationships.object_id = $wpdb->posts.ID) where ($wpdb->posts.ID < $post_id) " .
-                           "and ($wpdb->term_relationships.term_taxonomy_id = $cat_id) and ($wpdb->posts.post_status='publish') " .
-                           "order by $wpdb->posts.ID desc limit $num_left");
-
-    // Для правых сортировку можно было не задавать, но так, по образу и подобию
-    $right = $wpdb->get_results("select $wpdb->posts.* from $wpdb->posts join $wpdb->term_relationships on  " .
-                           "($wpdb->term_relationships.object_id = $wpdb->posts.ID) where ($wpdb->posts.ID > $post_id) " .
-                           "and ($wpdb->term_relationships.term_taxonomy_id = $cat_id) and($wpdb->posts.post_status='publish') " .
-                           "order by $wpdb->posts.ID asc limit $num_right");
-    // здесь будут все посты, заголовки которых нам надо отобразить
-    $posts = array ();
-
-    // Левые отсортированы по убыванию, поэтому добавляем каждый следующий в начало $posts
-    // Таким образом в $posts они будут отсортированы по возрастанию
-    foreach ($right as $post)
-        array_unshift($posts, $post);
-
-    $posts[] = get_post($post_id);
-
-    foreach ($left as $post)
-        $posts[] = $post;
-
-    // Выводим ссылки на всю эту фигню
-    echo "<ul class='portfolio-list'>";
-    foreach ($posts as $post) {
-        if ($post->ID != $post_id) {
-            $p_thumb = get_post_meta($post->ID, 'wpcf-proj-thumb', true);
-            $p_title = get_post_meta($post->ID, 'wpcf-proj-title', true);
-            $title = $post->post_title;
-            echo "<li>";
-            echo "<a href='". get_permalink($post->ID) ."'>";
-            if ($p_thumb) { echo "<img src='$p_thumb' width='194' height='152' alt='$p_title' title='$title' >"; };
-            echo "<div class='mask'><h4>$p_title</h4></div>";
-            echo "</a>";
-            echo "</li>";
-        } else {
-            // echo $post->post_title;
-        };
-    }
-    echo "</ul>";
-}
 
 
 // Запрещаем доступ к редактору файлов по прямой ссылке wp-admin/theme-editor.php:
@@ -260,7 +159,14 @@ function remove_theme_editor_page() {
 add_action('admin_menu', 'remove_theme_editor_page', 999);
 
 
-// for Options Page
-if (function_exists('acf_set_options_page_menu')){
-    acf_set_options_page_menu('Theme Options');
+// get current URL
+function current_url() {
+    global $wp;
+    if(!$wp->did_permalink){
+        $output = home_url(add_query_arg($wp->query_string));
+    } else {
+        $output = home_url(add_query_arg(array(),$wp->request).'/');
+    }
+
+    return $output;
 }

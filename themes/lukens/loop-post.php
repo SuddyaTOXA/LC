@@ -7,7 +7,9 @@
     <div class="post-box">
         <div class="post-img-wrap">
             <a href="<?php the_permalink(); ?>" title="<?= esc_attr($title); ?>">
-                <?php the_post_thumbnail('blog-thumb'); ?>
+                <?php the_post_thumbnail('blog-thumb', array(
+                            'alt'   => esc_attr($post->post_title)
+                        )); ?>
             </a>
             <span class="post-date"><?php the_date(); ?></span>
         </div>

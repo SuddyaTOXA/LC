@@ -92,13 +92,13 @@
 
 .section-contact-page {
   overflow: hidden;
-  padding-top: 103px;
+  padding-top: 110px;
   padding-bottom: 60px;
   .container {
     max-width: 1260px;
   }
   .section-title {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
   }
   .content-wrap {
     margin-left: 0;
@@ -121,22 +121,24 @@
          }
       }
       textarea.input-style {
-        height: 165px;
+        min-height: 127px;
       }
     }
   }
 }
   .form-box {
     overflow: hidden;
+    padding-bottom: 20px;
+    text-align: left;
   }
   .form-page-wrap {
     .form-btn-box {
-      margin-top: 70px;
+      margin-top: 50px;
     }
   }
 
 .section-location {
-  padding-top: 40px;
+  padding-top: 45px;
   padding-bottom: 110px;
   background-color: #f3f3f3;
   text-align: center;
@@ -145,7 +147,7 @@
   }
 }
   .location-list {
-    margin: 33px -10px -20px;
+    margin: 43px -10px -20px;
     > li {
       display: inline-block;
       width: 33%;

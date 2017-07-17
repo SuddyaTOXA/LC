@@ -11,7 +11,9 @@ $share_btn = get_field('share_btn');
 
             <?php if (has_post_thumbnail()) { ?>
                 <div class="blog-img-wrap" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>)">
-                    <?php the_post_thumbnail('full'); ?>
+                    <?php the_post_thumbnail('full', array(
+                            'alt'   => esc_attr($post->post_title)
+                        )); ?>
                 </div>
             <?php } ?>
             <?php the_title('<h2 class="blog-title">', '</h2>'); ?>

@@ -6,6 +6,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="shortcut icon" href="<?= get_bloginfo('template_url') ?>/favicon.ico">
+    <link rel="apple-touch-icon" href="<?= get_bloginfo('template_url') ?>/img/touch-icon.gif">
     <?php wp_head(); ?>
 </head>
 
@@ -61,6 +63,16 @@
                             'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                             'depth'           => 2
                         )); ?>
+                        <div class="search-box">
+                            <div class="widget_search">
+                                <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+                                    <label>
+                                        <input type="search" class="search-field" placeholder="Search …" value="<?php esc_attr_e(trim(get_search_query())); ?>" name="s" title="Search …">
+                                    </label>
+                                    <input type="submit" class="search-submit" value="Search">
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="mobile-menu-overlay"></div>
                 </div>

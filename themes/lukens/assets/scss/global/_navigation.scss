@@ -21,40 +21,77 @@
         font-size: 14px;
         font-weight: $bold;
         @include css3-prefix('transition', '0.2s');
-        .home & {
-          color: $color-nav;
-        }
+        .home &,
         .scrolling & {
           color: $color-nav;
         }
         &:hover,
         &:focus {
-          color: $color-text3;
+          text-decoration: none;
+          //  color: $color-text3;
+          //  body:not(.home) &,
+          //  .header:not(.scrolling) &,
+          //  body:not(.page-template-page-service) &,
+          //  body:not(.single-service) & {
+          //    color: $color-nav;
         }
       }
     }
   }
+
+  a:focus,
   a:hover,
   .current-menu-item > a,
   .current-menu-ancestor > a {
-    color: $color-text3;
-    text-decoration: none;
     .home &,
-    .scrolling & {
+    .scrolling &,
+    .single-service &,
+    .page-template-page-service & {
       color: $color-text3;
-      text-decoration: none;
     }
+    color: $color-nav;
   }
 }
+  .single-study .main-nav .menu-item-24 > a,
+  .single-post .main-nav .menu-item-23 > a {
+    color: $color-nav;
+  }
+  .single-service .main-nav .menu-item-25 > a {
+    color: $color-text3;
+  }
+  .single-study .footer-menu > .menu-item-34 > a,
+  .single-post .footer-menu > .menu-item-33 > a,
+  .single-service .footer-menu > .menu-item-35 > a {
+    color: $color-text3;
+  }
+    //color: $color-text3;
+    //text-decoration: none;
+    //body:not(.home) &,
+    //.header:not(.scrolling) &,
+    //body:not(.page-template-page-service) &,
+    //body:not(.single-service) & {
+    //  color: $color-nav;
+    //}
+    //.home &,
+    //.scrolling & {
+    //  color: $color-text3;
+    //  text-decoration: none;
+    //}
+  //}
+
 .mobile-menu {
   padding-bottom: 20px;
   > li {
     position: relative;
     display: block;
+    border-bottom: 1px solid rgba(42, 66, 90, .4);
+    &:last-child {
+      border-bottom: none;
+    }
     a {
       position: relative;
       display: block;
-      text-transform: uppercase;
+      text-transform: capitalize;
       padding: 10px 25px 8px;
       color: $color-nav;
       font-size: 16px;
@@ -88,6 +125,13 @@
     content: "\f106";
   }
 }
+.single-study .mobile-menu > .menu-item-24 > a,
+.single-post .mobile-menu > .menu-item-23 > a,
+.single-service .mobile-menu > .menu-item-25 > a {
+  color: $color-text3;
+  text-decoration: none;
+}
+
 .header-btn-box {
   overflow: hidden;
   float: right;

@@ -93,6 +93,42 @@ jQuery(document).ready(function($) {
                 }
             })
 
+            //title for CF7
+            $(window).on('load', function() {
+                var field = $('[placeholder]');
+
+                field.each(function () {
+                    var value = $(this).attr('placeholder');
+                    $(this).attr('title', value);
+                });
+            });
+
+            //for text area height
+            jQuery.each(jQuery('textarea'), function() {
+                var offset = this.offsetHeight - this.clientHeight;
+
+                var resizeTextarea = function(el) {
+                    jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+                };
+                jQuery(this).on('keyup input', function() { resizeTextarea(this); });
+            });
+
+            //for modal
+            $('.popup-modal').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
         })
 
     });

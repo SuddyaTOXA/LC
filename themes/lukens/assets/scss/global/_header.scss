@@ -6,7 +6,7 @@
   width: 100%;
   min-height: 120px;
   padding-top: 29px;
-  padding-bottom: 29px;
+  padding-bottom: 21px;
   background-color: transparent;
   opacity: 0;
   @include css3-prefix('transition', 'all 0.5s ease');
@@ -16,7 +16,7 @@
   &.scrolling {
     min-height: 90px;
     padding-top: 15px;
-    padding-bottom: 18px;
+    padding-bottom: 6px;
     background-color: $white;
     @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
   }
@@ -44,8 +44,9 @@
 .logo {
   overflow: hidden;
   float: left;
-  max-width: 324px;
-  margin-top: 19px;
+  max-width: 362px;
+  margin-left: -19px;
+  padding: 19px;
   @include transition($transition-other);
   img {
     max-width: 100%;
@@ -84,7 +85,7 @@
   top: 65px;
   @include css3-prefix('transition-delay', '0.35s');
   .admin-bar & {
-    top: 108px;
+    top: 97px;
   }
   &.showing {
     height: 100%;
@@ -109,25 +110,21 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  right: -100%;
+  left: -100%;
   z-index: 2;
   padding-bottom: 100px;
   background-color: rgba(255, 255, 255, 1);
-  @include css3-prefix('transition', 'right 0.35s');
+  @include css3-prefix('transition', 'left 0.35s');
   overflow: auto;
-  //-webkit-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
-  //-moz-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
-  //-o-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
-  //box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
   .showing & {
-    right: 0;
+    left: 0;
   }
 }
 
 .mobile-menu-toggle {
   position: absolute;
-  right: 0;
-  top: -10px;
+  left: 0;
+  top: -6px;
   height: 65px;
   width: 65px;
   vertical-align: middle;

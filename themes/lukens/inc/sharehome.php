@@ -1,4 +1,19 @@
 <div class="share-box">
+    <span class="share-btn-list">
+        <span>
+            <i class="fa fa-facebook" aria-hidden="true"></i>        
+        </span>
+        <span>
+            <i class="fa fa-twitter" aria-hidden="true"></i>        
+        </span>
+        <span>
+            <i class="fa fa-envelope" aria-hidden="true"></i>        
+        </span>
+    </span>
+</div>
+
+<?php /*
+<div class="share-box">
     <ul class="share-btn-list">
         <li>
             <a title="Share to Facebook" href="http://facebook.com/sharer.php?url=<?php the_permalink(); ?>" target="_blank"  rel="nofollow">
@@ -22,3 +37,4 @@
         </li>
     </ul>
 </div>
+*/ ?>

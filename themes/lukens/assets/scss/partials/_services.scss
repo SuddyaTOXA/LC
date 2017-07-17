@@ -4,6 +4,16 @@
     margin: 0 auto;
 
   }
+  .vc_section {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .vc_row {
+    margin-right: 0;
+    margin-left: 0;
+  }
   .client.container {
     max-width: 1180px;
     margin: 0 auto;
@@ -70,7 +80,7 @@
 .section-service {
   overflow: hidden;
   padding-top: 107px;
-  padding-bottom: 50px;
+  padding-bottom: 110px;
   .container {
     max-width: 1040px;
   }
@@ -78,7 +88,6 @@
   .content-box-wrap {
     float: left;
     position: relative;
-    -webkit-max-width: calc(100% - 270px);
     max-width: calc(100% - 270px);
     width: 100%;
     padding-right: 59px;
@@ -150,7 +159,8 @@
       font-size: 13px;
       text-transform: capitalize;
       &:hover,
-      &:focus {
+      &:focus,
+      &.active {
         color: $color-text3;
         text-decoration: none ;
       }
@@ -282,3 +292,4 @@
   }
 }
 
+.services-box {}

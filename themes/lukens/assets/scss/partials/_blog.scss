@@ -1,5 +1,5 @@
 .section-blog-list {
-  padding-top: 59px;
+  padding-top: 65px;
   padding-bottom: 66px;
   .container {
     max-width: 1044px;
@@ -9,13 +9,13 @@
     letter-spacing: 0;
     &.line {
       &:after {
-        bottom: 15px;
+        bottom: 5px;
       }
     }
   }
 }
   .post-list {
-    margin-top: 26px;
+    margin-top: 34px;
     max-width: 980px;
     > li {
       margin-bottom: 99px;

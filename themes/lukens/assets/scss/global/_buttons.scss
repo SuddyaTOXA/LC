@@ -21,8 +21,8 @@ a.btn, .btn {
   @include border-radius(2px);
   &:hover,
   &:focus {
-    border-color: rgba(209, 139, 44, .7);
-    background-color: rgba(209, 139, 44, .7);
+    color: $color-bg2;
+    background-color: $white;
   }
   .icon {
     padding-left: 11px;
@@ -43,8 +43,8 @@ a.btn-blue,
   border-color: $color-bg3;
   &:hover,
   &:focus {
-    border-color: rgba(42, 66, 90, .7);
-    background-color: rgba(42, 66, 90, .7);
+    color: $color-bg3;
+    background-color: $white;
   }
 }
 a.btn-green-inverse,
@@ -55,7 +55,7 @@ a.btn-green-inverse,
   background-color: transparent;
   &:hover,
   &:focus {
-    border-color: #79a22e;
+    color: $white;
     background-color: #79a22e;
     opacity: 1;
   }

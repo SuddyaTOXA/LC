@@ -55,7 +55,7 @@
                 </div>
                 <img src="<?= $hero_image ?>" alt="<?php echo strip_tags($hero_title ); ?>">
             </div>
-            <a class="btn-go-bottom smooth-scroll" href="#our-services">
+            <a class="btn-go-bottom smooth-scroll" href="#our-services" title="Scroll Down">
                 <span class="icon icon-icon_chevron_white"></span>
             </a>
         </section>
@@ -204,29 +204,29 @@
 //                                get_template_part('loop', 'post');
                             ?>
                                 <li>
-                                    <div class="recent-blog-box">
-                                        <div class="f-coll">
-                                            <span class="recent-blog-date"><?php the_date(); ?></span>
-                                            <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
-                                                <?php the_title('<span class="recent-blog-title">', '</span>'); ?>
-                                            </a>
+                                    <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
+                                        <span class="recent-blog-box">
+                                            <span class="f-coll">
+                                                <span class="recent-blog-date"><?php the_date(); ?></span>
+                                                    <?php the_title('<span class="recent-blog-title">', '</span>'); ?>
+                                                <span class="recent-blog-name"><?php the_author(); ?></span>
+                                                <?php get_template_part('inc/sharehome'); ?>
+                                            </span>
+                                            <span class="s-coll" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">
+                                                    <?php the_post_thumbnail('medium', array(
+                                                        'alt'   => esc_attr($post->post_title )
+                                                    )); ?>
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
+                                        <span class="f-coll copy">
+                                            <span class="recent-blog-date"><?php the_date(); ?></span>                                            
+                                                <?php the_title('<span class="recent-blog-title">', '</span>'); ?>                                    
                                             <span class="recent-blog-name"><?php the_author(); ?></span>
-                                            <?php get_template_part('inc/sharehome'); ?>
-                                        </div>
-                                        <div class="s-coll" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">
-                                            <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
-                                                <?php the_post_thumbnail('medium'); ?>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="f-coll copy">
-                                        <span class="recent-blog-date"><?php the_date(); ?></span>
-                                        <a href="<?php the_permalink(); ?>" title="<?php esc_attr(get_the_title()) ?>">
-                                            <?php the_title('<span class="recent-blog-title">', '</span>'); ?>
-                                        </a>
-                                        <span class="recent-blog-name"><?php the_author_posts_link(); ?></span>
-                                        <?php get_template_part('inc/sharehome'); ?>
-                                    </div>
+                                            <?php //get_template_part('inc/sharehome'); ?>
+                                        </span>
+                                    </a> 
                                 </li>
 
                             <?php
