@@ -910,11 +910,16 @@
   .left-modal-box,
   .right-modal-box {
     display: block;
-    width: 100% !important;
+    width: 100%;
+    height: auto;
   }
   .right-modal-box {
+    height: auto;
     max-width: 320px;
-    margin: 30px auto 20px;
+    margin: 0 auto 20px;
+    .left-modal-box + & {
+      padding-top: 0;
+    }
   }
 }
 

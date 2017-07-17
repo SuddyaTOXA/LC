@@ -64,10 +64,10 @@
     </footer>
 
 
-    <div id="modal" class=" modal-popup zoom-anim-dialog mfp-hide get-a-copy inverse">
+    <div id="modal" class="modal-popup zoom-anim-dialog mfp-hide get-a-copy inverse">
         <div class="modal-content">
             <div class="left-modal-box">
-                <img src="<?php echo get_bloginfo('template_url')?>/img/icon-download.png" alt="icon-download">
+                <img src="<?= get_bloginfo('template_url')?>/img/icon-download.png" alt="icon-download">
             </div>
             <div class="right-modal-box">
                 <h2 class="modal-title left line">Get A Copy!</h2>
@@ -79,13 +79,13 @@
 
 
                 <div class="form-wrap">
-                    <form  method="post" >
+                    <form method="post" action="#">
                         <ul class="form-list">
                             <li>
-                                <input class="input-style" type="text" name="your-name" value=""  id="name"  placeholder="Name*" title="Name*">
+                                <input class="input-style" type="text" name="your-name" value="" placeholder="Name*" title="Name">
                             </li>
                             <li>
-                                <input class="input-style" type="email" name="your-email" value="" id="email" placeholder="Email*" title="Email*">
+                                <input class="input-style" type="email" name="your-email" value="" placeholder="Email*" title="Email">
                             </li>
                         </ul>
                         <div class="form-btn-box">
@@ -97,12 +97,12 @@
                 </div>
             </div>
         </div>
-    </div
+    </div>
 
-    <div id="modal2" class=" modal-popup zoom-anim-dialog mfp-hide get-a-copy inverse">
+    <div id="modal2" class="modal-popup modal-thanks zoom-anim-dialog mfp-hide get-a-copy inverse">
         <div class="modal-content">
             <div class="left-modal-box">
-                <img src="<?php echo get_bloginfo('template_url')?>/img/ion_zap.png" alt="icon-zap">
+                <img src="<?= get_bloginfo('template_url')?>/img/ion_zap.png" alt="icon-zap">
             </div>
             <div class="right-modal-box">
                 <h2 class="modal-title left line">Thanks!</h2>
@@ -112,11 +112,12 @@
                         You can also download directly below. </p>
                 </div>
 
-                <a class="btn btn-submit" href="#" title="download now">download now</a>
+                <div class="submit-wrap download">
+                    <a class="btn btn-submit" href="#" title="download now">Download Now</a>
+                </div>
             </div>
         </div>
-    </div
-
+    </div>
 
     <?php wp_footer(); ?>
 </body>

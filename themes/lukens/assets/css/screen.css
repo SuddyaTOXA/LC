@@ -870,12 +870,8 @@ img.mfp-img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; }
-
-#modal2.get-a-copy {
-  background-image: url("../../img/bg-modal-thanks.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; }
+  .modal-popup.modal-thanks.get-a-copy {
+    background-image: url("../../img/bg-modal-thanks.png"); }
 
 .modal-content {
   display: table;
@@ -898,6 +894,13 @@ img.mfp-img {
     margin-left: 0; }
     .modal-content .submit-wrap:after {
       right: 30px; }
+    .modal-content .submit-wrap.download:after {
+      content: '';
+      right: 26px;
+      width: 22px;
+      height: 20px;
+      background: transparent url(../../img/icon-download-small.png) no-repeat center;
+      background-size: contain; }
   .modal-content a.btn-submit,
   .modal-content .btn-submit {
     color: #ffffff; }
@@ -1466,15 +1469,15 @@ select {
 
 .search-box {
   padding: 0 25px 20px; }
-
-.search-box .widget_search:after {
-  top: 12px;
-  font-size: 15px; }
-
-.search-box .widget_search .search-field {
-  max-width: 100%;
-  min-height: 40px;
-  line-height: 40px; }
+  .search-box .widget_search:after {
+    top: 14px;
+    font-size: 15px; }
+  .search-box .widget_search .search-field {
+    max-width: 100%;
+    min-height: 40px;
+    line-height: 40px; }
+  .search-box .widget_search .search-submit {
+    height: 40px; }
 
 .header {
   position: fixed;
@@ -4449,11 +4452,15 @@ a.study-title,
   .left-modal-box,
   .right-modal-box {
     display: block;
-    width: 100% !important; }
+    width: 100%;
+    height: auto; }
 
   .right-modal-box {
+    height: auto;
     max-width: 320px;
-    margin: 30px auto 20px; } }
+    margin: 0 auto 20px; }
+    .left-modal-box + .right-modal-box {
+      padding-top: 0; } }
 @media all and (max-width: 600px) {
   .section-page-banner:after {
     position: absolute;

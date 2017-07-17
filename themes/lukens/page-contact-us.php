@@ -64,4 +64,7 @@ get_header();
             </div>
         </section>
     <?php } ?>
+
+    <?php get_template_part('inc/section', 'popup-modal'); ?>
+
 <?php get_footer(); ?>

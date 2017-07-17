@@ -5,7 +5,7 @@ if (is_tax('study_category')) {
     $id = get_the_id();
 }
 
-$title = get_field('page_heading', $id);
+$title = is_search() ? __('Search') : get_field('page_heading', $id);
 $short_info = get_field('page_short_info', $id);
 $color = get_field('page_overlay', $id);
 $bg_img = get_field('page_image', $id);

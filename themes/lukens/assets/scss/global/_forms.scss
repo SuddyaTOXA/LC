@@ -273,13 +273,18 @@ select {
 
 .search-box {
   padding: 0 25px 20px;
-}
-.search-box .widget_search:after {
-  top: 12px;
-  font-size: 15px;
-}
-.search-box .widget_search .search-field {
-  max-width: 100%;
-  min-height: 40px;
-  line-height: 40px;
+  .widget_search {
+    &:after {
+      top: 14px;
+      font-size: 15px;
+    }
+    .search-field {
+      max-width: 100%;
+      min-height: 40px;
+      line-height: 40px;
+    }
+    .search-submit {
+      height: 40px;
+    }
+  }
 }

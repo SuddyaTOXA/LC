@@ -692,11 +692,10 @@ button {
     background-image: url('../../img/modal_bg_opt-in.png');
     @include bg();
   }
-}
-#modal2 {
-  &.get-a-copy {
-    background-image: url('../../img/bg-modal-thanks.png');
-    @include bg();
+  &.modal-thanks {
+    &.get-a-copy {
+      background-image: url('../../img/bg-modal-thanks.png');
+    }
   }
 }
   .modal-content {
@@ -724,6 +723,14 @@ button {
       margin-left: 0;
       &:after {
         right: 30px;
+      }
+      &.download:after {
+        content: '';
+        right: 26px;
+        width: 22px;
+        height: 20px;
+        background: transparent url(../../img/icon-download-small.png) no-repeat center;
+        background-size: contain;
       }
     }
     a.btn-submit,

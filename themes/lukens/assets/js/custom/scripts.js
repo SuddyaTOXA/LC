@@ -1,26 +1,24 @@
 jQuery(document).ready(function($) {
     $(function(){
         // header fade
-       var header = $('#header');
-           setTimeout(function(){
-                header.addClass('show');
-           },800);
+        var header = $('#header');
+        setTimeout(function(){
+            header.addClass('show');
+        },800);
 
         //header background on scroll
-        var header = $('#header');
         $(window).on('load scroll', function() {
-           var st2 = $(this).scrollTop();
+            var st2 = $(this).scrollTop();
 
-           if (st2 > 0) {
-              header.addClass('scrolling');
-
-           } else {
-           	header.removeClass('scrolling');
-           }
-
+            if (st2 > 0) {
+                header.addClass('scrolling');
+            } else {
+                header.removeClass('scrolling');
+            }
         });
+
         //for smooth scroll
-        if ( $('a').is('.smooth-scroll') ) {
+        if ( $('a.smooth-scroll').length ) {
             smoothScroll.init({
                 selector: '.smooth-scroll', // Selector for links (must be a class, ID, data attribute, or element tag)
                 speed: 500, // Integer. How fast to complete the scroll in milliseconds
@@ -56,7 +54,7 @@ jQuery(document).ready(function($) {
                         }
                     });
                 }
-            })
+            });
 
             //for home case study box
             $(window).on('load resize', function() {
@@ -74,7 +72,7 @@ jQuery(document).ready(function($) {
                         }
                     });
                 }
-            })
+            });
 
             //for case related box
             $(window).on('load resize', function() {
@@ -91,7 +89,7 @@ jQuery(document).ready(function($) {
                     });
                     imgBox.css('height', maxHeight)
                 }
-            })
+            });
 
             //title for CF7
             $(window).on('load', function() {
