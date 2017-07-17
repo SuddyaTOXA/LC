@@ -1,7 +1,6 @@
+    </div>
 
-
-    </div><!--/wrap-->
-        <footer class="footer" id="footer">
+    <footer class="footer" id="footer">
         <a class="btn-go-top smooth-scroll" href="#main-content" title="Back to Top">
             <span class="icon icon-icon-chevron-up"></span>
         </a>
@@ -63,11 +62,10 @@
         </div>
     </footer>
 
-
     <div id="modal" class="modal-popup zoom-anim-dialog mfp-hide get-a-copy inverse">
         <div class="modal-content">
             <div class="left-modal-box">
-                <img src="<?= get_bloginfo('template_url')?>/img/icon-download.png" alt="icon-download">
+                <img src="<?= get_bloginfo('template_url'); ?>/img/icon-download.png" alt="icon-download" />
             </div>
             <div class="right-modal-box">
                 <h2 class="modal-title left line">Get A Copy!</h2>
@@ -76,7 +74,6 @@
                     <p>Sign-up to recieve our newsletter and get a
                         <span>free copy</span> of the case study for a more in-depth look at the process and outcome of our work. </p>
                 </div>
-
 
                 <div class="form-wrap">
                     <form method="post" action="#">
@@ -102,7 +99,7 @@
     <div id="modal2" class="modal-popup modal-thanks zoom-anim-dialog mfp-hide get-a-copy inverse">
         <div class="modal-content">
             <div class="left-modal-box">
-                <img src="<?= get_bloginfo('template_url')?>/img/ion_zap.png" alt="icon-zap">
+                <img src="<?= get_bloginfo('template_url'); ?>/img/ion_zap.png" alt="icon-zap" />
             </div>
             <div class="right-modal-box">
                 <h2 class="modal-title left line">Thanks!</h2>

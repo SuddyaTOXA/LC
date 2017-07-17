@@ -384,12 +384,12 @@ img {
 .wrapper {
   position: relative;
   min-height: 100%;
-  margin-bottom: -436px; }
+  margin-bottom: -462px; }
   .wrapper:after {
     content: '';
     display: block;
     width: 100%;
-    height: 436px; }
+    height: 462px; }
 
 /* Magnific Popup CSS */
 .mfp-bg {
@@ -893,7 +893,7 @@ img.mfp-img {
   .modal-content .submit-wrap {
     margin-left: 0; }
     .modal-content .submit-wrap:after {
-      right: 30px; }
+      right: 28px; }
     .modal-content .submit-wrap.download:after {
       content: '';
       right: 26px;
@@ -1496,9 +1496,9 @@ select {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-  .header.show {
+  .header.show, .no-js .header {
     opacity: 1; }
-  .header.scrolling {
+  .header.scrolling, .no-js .header {
     min-height: 90px;
     padding-top: 15px;
     padding-bottom: 6px;
@@ -1543,15 +1543,11 @@ select {
     max-height: 100%; }
   .logo .dark {
     display: none; }
-    .home .logo .dark {
-      display: block; }
-    .scrolling .logo .dark {
+    .home .logo .dark, .scrolling .logo .dark, .no-js .logo .dark {
       display: block; }
   .logo .light {
     display: block; }
-    .home .logo .light {
-      display: none; }
-    .scrolling .logo .light {
+    .home .logo .light, .scrolling .logo .light, .no-js .logo .light {
       display: none; }
 
 .mobile-menu-wrap,
@@ -1704,7 +1700,7 @@ select {
         -ms-transition: 0.2s;
         -o-transition: 0.2s;
         transition: 0.2s; }
-        .home .main-nav > ul > li a, .scrolling .main-nav > ul > li a {
+        .home .main-nav > ul > li a, .scrolling .main-nav > ul > li a, .no-js .main-nav > ul > li a {
           color: #00334E; }
         .main-nav > ul > li a:hover, .main-nav > ul > li a:focus {
           text-decoration: none; }
@@ -1713,16 +1709,19 @@ select {
   .main-nav .current-menu-item > a,
   .main-nav .current-menu-ancestor > a {
     color: #00334E; }
-    .home .main-nav a:focus, .scrolling .main-nav a:focus, .single-service .main-nav a:focus, .page-template-page-service .main-nav a:focus, .home
+    .home .main-nav a:focus, .scrolling .main-nav a:focus, .no-js .main-nav a:focus, .single-service .main-nav a:focus, .page-template-page-service .main-nav a:focus, .home
     .main-nav a:hover, .scrolling
+    .main-nav a:hover, .no-js
     .main-nav a:hover, .single-service
     .main-nav a:hover, .page-template-page-service
     .main-nav a:hover, .home
     .main-nav .current-menu-item > a, .scrolling
+    .main-nav .current-menu-item > a, .no-js
     .main-nav .current-menu-item > a, .single-service
     .main-nav .current-menu-item > a, .page-template-page-service
     .main-nav .current-menu-item > a, .home
     .main-nav .current-menu-ancestor > a, .scrolling
+    .main-nav .current-menu-ancestor > a, .no-js
     .main-nav .current-menu-ancestor > a, .single-service
     .main-nav .current-menu-ancestor > a, .page-template-page-service
     .main-nav .current-menu-ancestor > a {
@@ -1816,7 +1815,7 @@ select {
     -ms-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     -o-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1); }
-  .scrolling .main-nav .sub-menu {
+  .scrolling .main-nav .sub-menu, .no-js .main-nav .sub-menu {
     background-color: #ffffff;
     -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     -khtml-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
@@ -2512,11 +2511,12 @@ select {
 
 .submit-wrap {
   position: relative;
-  display: inline-block;
-  margin-left: 16px; }
+  display: inline-block; }
+  div.wpcf7 .submit-wrap .ajax-loader {
+    position: absolute; }
   .submit-wrap:after {
     position: absolute;
-    right: 48px;
+    right: 28px;
     top: 50%;
     content: "\e912";
     font-family: 'icomoon' !important;
@@ -2567,9 +2567,9 @@ select {
 
 .banner-box {
   width: 100%;
-  height: 100%;
+  height: 228px;
   max-width: 541px;
-  max-height: 228px;
+  max-height: 100%;
   margin: 0 auto;
   padding: 0 10px;
   background-image: url(../../img/whitebrush-tamed-1.png);
@@ -2977,7 +2977,7 @@ select {
   max-width: 530px;
   margin: 0 auto; }
 .section-services-list .submit-wrap:after {
-  right: 45px; }
+  right: 25px; }
 
 .bg-gradient {
   -webkit-background-image: linear-gradient(180deg, #ffffff 0%, rgba(240, 240, 240, 0.85) 100%);
@@ -3795,12 +3795,10 @@ a.study-title,
   .mobile-menu-toggle {
     display: block; }
 
-  .header,
-  .header.scrolling {
+  .header, .header.scrolling, .no-js .header {
     min-height: 65px;
     padding-top: 6px;
     padding-bottom: 2px; }
-
   .header .container {
     max-width: 100%; }
 

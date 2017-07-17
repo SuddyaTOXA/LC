@@ -10,10 +10,12 @@
   background-color: transparent;
   opacity: 0;
   @include css3-prefix('transition', 'all 0.5s ease');
-  &.show {
+  &.show,
+  .no-js & {
     opacity: 1;
   }
-  &.scrolling {
+  &.scrolling,
+  .no-js & {
     min-height: 90px;
     padding-top: 15px;
     padding-bottom: 6px;
@@ -54,19 +56,17 @@
   }
   .dark {
     display: none;
-    .home & {
-      display: block;
-    }
-    .scrolling & {
+    .home &,
+    .scrolling &,
+    .no-js & {
       display: block;
     }
   }
   .light {
-    .home & {
-      display: none;
-    }
     display: block;
-    .scrolling & {
+    .home &,
+    .scrolling &,
+    .no-js & {
       display: none;
     }
   }

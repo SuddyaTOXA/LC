@@ -206,11 +206,11 @@ img {
 .wrapper {
   position: relative;
   min-height: 100%;
-  margin-bottom: -436px;
+  margin-bottom: -462px;
   &:after {
     content: '';
     display: block;
     width: 100%;
-    height: 436px;
+    height: 462px;
   }
 }

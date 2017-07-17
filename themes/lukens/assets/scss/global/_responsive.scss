@@ -102,14 +102,17 @@
   .mobile-menu-toggle {
     display: block;
   }
-  .header,
-  .header.scrolling {
-    min-height: 65px;
-    padding-top: 6px;
-    padding-bottom: 2px;
-  }
-  .header .container {
-    max-width: 100%;
+  .header {
+    &,
+    &.scrolling,
+    .no-js & {
+      min-height: 65px;
+      padding-top: 6px;
+      padding-bottom: 2px;
+    }
+    .container {
+      max-width: 100%;
+    }
   }
   .logo {
     float: right;

@@ -1,8 +1,5 @@
 /*--------------------------------------NAV-----------------------------------------*/
 .main-nav {
-
-}
-.main-nav {
   float: right;
   padding-top: 16px;
   margin-right: 15px;
@@ -22,18 +19,13 @@
         font-weight: $bold;
         @include css3-prefix('transition', '0.2s');
         .home &,
-        .scrolling & {
+        .scrolling &,
+        .no-js & {
           color: $color-nav;
         }
         &:hover,
         &:focus {
           text-decoration: none;
-          //  color: $color-text3;
-          //  body:not(.home) &,
-          //  .header:not(.scrolling) &,
-          //  body:not(.page-template-page-service) &,
-          //  body:not(.single-service) & {
-          //    color: $color-nav;
         }
       }
     }
@@ -45,6 +37,7 @@
   .current-menu-ancestor > a {
     .home &,
     .scrolling &,
+    .no-js &,
     .single-service &,
     .page-template-page-service & {
       color: $color-text3;
@@ -64,20 +57,6 @@
   .single-service .footer-menu > .menu-item-35 > a {
     color: $color-text3;
   }
-    //color: $color-text3;
-    //text-decoration: none;
-    //body:not(.home) &,
-    //.header:not(.scrolling) &,
-    //body:not(.page-template-page-service) &,
-    //body:not(.single-service) & {
-    //  color: $color-nav;
-    //}
-    //.home &,
-    //.scrolling & {
-    //  color: $color-text3;
-    //  text-decoration: none;
-    //}
-  //}
 
 .mobile-menu {
   padding-bottom: 20px;
@@ -156,7 +135,8 @@
     background-color: $white;
     @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
   }
-  .scrolling & {
+  .scrolling &,
+  .no-js & {
     background-color: $white;
     @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
   }
