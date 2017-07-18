@@ -1497,9 +1497,9 @@ select {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-  .header.show, .no-js .header {
+  .header.show, .no-js .header, html:not(.js) .header {
     opacity: 1; }
-  .header.scrolling, .no-js .header {
+  .header.scrolling, .no-js .header, html:not(.js) .header {
     min-height: 90px;
     padding-top: 15px;
     padding-bottom: 6px;
@@ -1530,7 +1530,7 @@ select {
       .admin-bar .header {
         top: 46px; } }
   @media all and (max-width: 600px) {
-    .admin-bar .header.scrolling, .no-js .header {
+    .admin-bar .header.scrolling, .no-js .header, html:not(.js) .header {
       top: 0; } }
 
 .logo {
@@ -1550,11 +1550,11 @@ select {
     max-height: 100%; }
   .logo .dark {
     display: none; }
-    .home .logo .dark, .scrolling .logo .dark, .no-js .logo .dark {
+    .home .logo .dark, .scrolling .logo .dark, .no-js .logo .dark, html:not(.js) .logo .dark {
       display: block; }
   .logo .light {
     display: block; }
-    .home .logo .light, .scrolling .logo .light, .no-js .logo .light {
+    .home .logo .light, .scrolling .logo .light, .no-js .logo .light, html:not(.js) .logo .light {
       display: none; }
 
 .mobile-menu-wrap,
@@ -1707,7 +1707,7 @@ select {
         -ms-transition: 0.2s;
         -o-transition: 0.2s;
         transition: 0.2s; }
-        .home .main-nav > ul > li a, .scrolling .main-nav > ul > li a, .no-js .main-nav > ul > li a {
+        .home .main-nav > ul > li a, .scrolling .main-nav > ul > li a, .no-js .main-nav > ul > li a, html:not(.js) .main-nav > ul > li a {
           color: #00334E; }
         .main-nav > ul > li a:hover, .main-nav > ul > li a:focus {
           text-decoration: none; }
@@ -1716,19 +1716,22 @@ select {
   .main-nav .current-menu-item > a,
   .main-nav .current-menu-ancestor > a {
     color: #00334E; }
-    .home .main-nav a:focus, .scrolling .main-nav a:focus, .no-js .main-nav a:focus, .single-service .main-nav a:focus, .page-template-page-service .main-nav a:focus, .home
+    .home .main-nav a:focus, .scrolling .main-nav a:focus, .no-js .main-nav a:focus, html:not(.js) .main-nav a:focus, .single-service .main-nav a:focus, .page-template-page-service .main-nav a:focus, .home
     .main-nav a:hover, .scrolling
     .main-nav a:hover, .no-js
+    .main-nav a:hover, html:not(.js)
     .main-nav a:hover, .single-service
     .main-nav a:hover, .page-template-page-service
     .main-nav a:hover, .home
     .main-nav .current-menu-item > a, .scrolling
     .main-nav .current-menu-item > a, .no-js
+    .main-nav .current-menu-item > a, html:not(.js)
     .main-nav .current-menu-item > a, .single-service
     .main-nav .current-menu-item > a, .page-template-page-service
     .main-nav .current-menu-item > a, .home
     .main-nav .current-menu-ancestor > a, .scrolling
     .main-nav .current-menu-ancestor > a, .no-js
+    .main-nav .current-menu-ancestor > a, html:not(.js)
     .main-nav .current-menu-ancestor > a, .single-service
     .main-nav .current-menu-ancestor > a, .page-template-page-service
     .main-nav .current-menu-ancestor > a {
@@ -1825,7 +1828,7 @@ select {
     -ms-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     -o-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1); }
-  .scrolling .main-nav .sub-menu, .no-js .main-nav .sub-menu {
+  .scrolling .main-nav .sub-menu, .no-js .main-nav .sub-menu, html:not(.js) .main-nav .sub-menu {
     background-color: #ffffff;
     -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     -khtml-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
@@ -3805,7 +3808,7 @@ a.study-title,
   .mobile-menu-toggle {
     display: block; }
 
-  .header, .header.scrolling, .no-js .header {
+  .header, .header.scrolling, .no-js .header, html:not(.js) .header {
     min-height: 65px;
     padding-top: 6px;
     padding-bottom: 2px; }

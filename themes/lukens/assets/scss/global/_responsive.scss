@@ -105,7 +105,8 @@
   .header {
     &,
     &.scrolling,
-    .no-js & {
+    .no-js &,
+    html:not(.js) & {
       min-height: 65px;
       padding-top: 6px;
       padding-bottom: 2px;

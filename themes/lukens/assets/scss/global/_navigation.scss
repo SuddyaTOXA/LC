@@ -20,7 +20,8 @@
         @include css3-prefix('transition', '0.2s');
         .home &,
         .scrolling &,
-        .no-js & {
+        .no-js &,
+        html:not(.js) & {
           color: $color-nav;
         }
         &:hover,
@@ -38,6 +39,7 @@
     .home &,
     .scrolling &,
     .no-js &,
+    html:not(.js) &,
     .single-service &,
     .page-template-page-service & {
       color: $color-text3;
@@ -139,7 +141,8 @@
     @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
   }
   .scrolling &,
-  .no-js & {
+  .no-js &,
+  html:not(.js) & {
     background-color: $white;
     @include css3-prefix('box-shadow', '0 1px 15px rgba(0, 0, 0, 0.1)');
   }
