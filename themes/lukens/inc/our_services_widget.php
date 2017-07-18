@@ -7,12 +7,12 @@
 
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
     $args = array(
-    'post_type'     => 'service',
-    'post_status'   => 'publish',
-    'orderby'       => 'date',
-    'order'         => 'DESC',
-    'posts_per_page' => -1,
-    'paged'         => $paged,
+        'post_type'     => 'service',
+        'post_status'   => 'publish',
+        'orderby'       => 'date',
+        'order'         => 'DESC',
+        'posts_per_page' => -1,
+        'paged'         => $paged,
     );
     $new_query = new WP_Query( $args );
 
@@ -31,7 +31,7 @@
         echo '</ul>';
 
     } else {
-    echo "<p class='no-results'>Sorry, no services found...</p>";
+        echo "<p class='no-results'>Sorry, no services found...</p>";
     }
     wp_reset_query();
 ?>

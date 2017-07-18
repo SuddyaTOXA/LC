@@ -40,6 +40,15 @@
   }
   .admin-bar & {
     top: 32px;
+    @media all and (max-width: 782px){
+      top: 46px;
+    }
+  }
+  .admin-bar &.scrolling,
+  .no-js & {
+    @media all and (max-width: 600px){
+      top: 0;
+    }
   }
 }
 

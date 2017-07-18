@@ -970,7 +970,8 @@ a.btn, .btn {
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
-    transition: 0.2s; }
+    transition: 0.2s;
+    pointer-events: none; }
   a.btn .icon-icon_glasses, .btn .icon-icon_glasses {
     font-size: 13px; }
   a.btn .icon-icon_paperplane_green, .btn .icon-icon_paperplane_green {
@@ -1525,6 +1526,12 @@ select {
     position: relative; }
   .admin-bar .header {
     top: 32px; }
+    @media all and (max-width: 782px) {
+      .admin-bar .header {
+        top: 46px; } }
+  @media all and (max-width: 600px) {
+    .admin-bar .header.scrolling, .no-js .header {
+      top: 0; } }
 
 .logo {
   overflow: hidden;
@@ -1731,7 +1738,10 @@ select {
 .single-post .main-nav .menu-item-23 > a {
   color: #00334E; }
 
-.single-service .main-nav .menu-item-25 > a {
+.single-service .main-nav .menu-item-25 > a,
+.single-service .scrolling .main-nav .menu-item-25 > a,
+.single-study .scrolling .main-nav .menu-item-24 > a,
+.single-post .scrolling .main-nav .menu-item-23 > a {
   color: #DB9C39; }
 
 .single-study .footer-menu > .menu-item-34 > a,
@@ -4279,6 +4289,7 @@ a.study-title,
     .section-the-latest a.btn-grey-inverse, .section-the-latest .btn-grey-inverse {
       width: 200px;
       position: absolute;
+      z-index: 1;
       bottom: -120px;
       left: 50%;
       -webkit-transform: translate(-50%, 0);

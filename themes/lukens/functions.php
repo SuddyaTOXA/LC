@@ -30,8 +30,8 @@ add_action('wp_head', 'add_ie_html5_shiv');
 // logo at the entrance to the admin panel
 function my_custom_login_logo(){
     echo '<style type="text/css">
-    h1 a {height:32px !important; width:320px !important; background-size:contain !important; background-image:url('.get_bloginfo("template_url").'/img/logo.png) !important;}
-    </style>';
+            h1 a {height:32px !important; width:320px !important; background-size:contain !important; background-image:url('.get_bloginfo("template_url").'/img/logo.png) !important;}
+        </style>';
 }
 add_action('login_head', 'my_custom_login_logo');
 
@@ -39,7 +39,7 @@ add_filter( 'login_headerurl', create_function('', 'return get_home_url();') );
 add_filter( 'login_headertitle', create_function('', 'return false;') );
 
 
-// когда введены неправильный логин или пароль, никакой информации, объясняющей ситуацию, не появится!
+// no information explaining the situation will appear when an incorrect login or password is entered
 add_filter('login_errors',create_function('$a', "return null;"));
 
 
@@ -55,7 +55,7 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 remove_action( 'wp_head', 'wp_generator' );
 
 
-// удаление оборачиваемого тега <p> из картинок в контенте
+// remove the wrapped <p> tag from images in the content
 function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
@@ -129,7 +129,7 @@ add_action( 'widgets_init', 'register_my_widgets' );
 
 
 
-/* Хак на перезапись параметра guid при публикации или обновлении поста в админке (записывается пермалинк в текущей структуре)
+/* Hack on overwriting the guid parameter when publishing or updating a post in the admin panel (the permalink in the current structure is written)
 --------------------------------------------------------------------------------------------------------------------------------- */
 function guid_write( $id ){
     if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  ) return false; // если это автосохранение
@@ -143,7 +143,7 @@ add_action ('save_post', 'guid_write', 100);
 
 
 
-// Запрещаем доступ к редактору файлов по прямой ссылке wp-admin/theme-editor.php:
+// prohibit access to the file editor by a direct link wp-admin/theme-editor.php:
 function disable_editing_theme() {
     if (stripos($_SERVER['PHP_SELF'], '/wp-admin/theme-editor.php')) :
         wp_redirect(admin_url());
@@ -152,7 +152,7 @@ function disable_editing_theme() {
 }
 add_action('admin_init', 'disable_editing_theme', 999);
 
-// Удаляем пункт меню Редактор из меню админки:
+// Delete the menu item Editor from the admin menu:
 function remove_theme_editor_page() {
     remove_submenu_page('themes.php', 'theme-editor.php');
 }

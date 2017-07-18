@@ -49,7 +49,10 @@
   .single-post .main-nav .menu-item-23 > a {
     color: $color-nav;
   }
-  .single-service .main-nav .menu-item-25 > a {
+  .single-service .main-nav .menu-item-25 > a,
+  .single-service .scrolling .main-nav .menu-item-25 > a,
+  .single-study .scrolling .main-nav .menu-item-24 > a,
+  .single-post .scrolling .main-nav .menu-item-23 > a {
     color: $color-text3;
   }
   .single-study .footer-menu > .menu-item-34 > a,

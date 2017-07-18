@@ -28,6 +28,7 @@ a.btn, .btn {
     padding-left: 11px;
     color: $color-bg2;
     @include transition($transition-link);
+    pointer-events: none;
   }
   .icon-icon_glasses {
     font-size: 13px;

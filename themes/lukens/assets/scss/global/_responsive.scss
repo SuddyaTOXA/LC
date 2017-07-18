@@ -695,6 +695,7 @@
     a.btn-grey-inverse, .btn-grey-inverse {
       width: 200px;
       position: absolute;
+      z-index: 1;
       bottom: -120px;
       left: 50%;
       @include css3-prefix('transform', 'translate(-50%, 0)');
