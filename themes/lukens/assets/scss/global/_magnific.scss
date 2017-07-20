@@ -689,12 +689,12 @@ button {
   margin: 40px auto;
   position: relative;
   &.get-a-copy {
-    background-image: url('../../img/modal_bg_opt-in.png');
+    background-image: url('../../img/modal_bg_opt-in.jpg');
     @include bg();
   }
   &.modal-thanks {
     &.get-a-copy {
-      background-image: url('../../img/bg-modal-thanks.png');
+      background-image: url('../../img/bg-modal-thanks.jpg');
     }
   }
 }
@@ -758,6 +758,7 @@ button {
     width: 62%;
     text-align: left;
   }
+
 .modal-title {
   display: inline-block;
   margin-bottom: 14px;

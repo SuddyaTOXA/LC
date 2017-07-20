@@ -15,7 +15,7 @@
         </div>
         <div class="banner-overlay"></div>
         <?php
-            $url = get_bloginfo('template_url') . '/img/service_bg.png';
+            $url = get_bloginfo('template_url') . '/img/service_bg.jpg';
             echo '<img src="'. $url .'" alt="Not Found">';
         ?>
     </section>

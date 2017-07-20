@@ -134,7 +134,7 @@ add_action( 'widgets_init', 'register_my_widgets' );
 /* Hack on overwriting the guid parameter when publishing or updating a post in the admin panel (the permalink in the current structure is written)
 --------------------------------------------------------------------------------------------------------------------------------- */
 function guid_write( $id ){
-    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  ) return false; // если это автосохранение
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  ) return false; // if this is autosave
 
     global $wpdb;
 

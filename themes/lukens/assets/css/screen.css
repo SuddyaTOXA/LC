@@ -866,12 +866,12 @@ img.mfp-img {
   margin: 40px auto;
   position: relative; }
   .modal-popup.get-a-copy {
-    background-image: url("../../img/modal_bg_opt-in.png");
+    background-image: url("../../img/modal_bg_opt-in.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; }
   .modal-popup.modal-thanks.get-a-copy {
-    background-image: url("../../img/bg-modal-thanks.png"); }
+    background-image: url("../../img/bg-modal-thanks.jpg"); }
 
 .modal-content {
   display: table;

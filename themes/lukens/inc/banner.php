@@ -40,7 +40,7 @@ $bg_img = ($bg_img) ? $bg_img : get_field('page_image', $id);
                 if ($bg_img) {
                     echo '<img src="'. $bg_img .'" alt="'. esc_attr($title) .'">';
                 }  else {
-                    $url = get_bloginfo('template_url') . '/img/service_bg.png';
+                    $url = get_bloginfo('template_url') . '/img/service_bg.jpg';
                     echo '<img src="'. $url .'" alt="'. esc_attr($title) .'">';
                 }
             ?>
