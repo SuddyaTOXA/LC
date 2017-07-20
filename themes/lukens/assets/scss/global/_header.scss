@@ -100,6 +100,14 @@
   @include css3-prefix('transition-delay', '0.35s');
   .admin-bar & {
     top: 97px;
+    @media all and (max-width: 782px){
+      top: 110px;
+    }
+  }
+  @media all and (max-width: 600px){
+    .admin-bar .scrolling & {
+      top: 65px;
+    }
   }
   &.showing {
     height: 100%;
@@ -181,5 +189,30 @@
     transform: rotate(-45deg);
     @include css3-prefix('transform', 'rotate(-45deg)');
     bottom: 0;
+  }
+}
+
+.header-search-box {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: -6px;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  .icon-icon_search {
+    font-size: 26px;
+    line-height: 65px;
+    color: $color-text4;
+    @include transition($transition-other);
+  }
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      .icon-icon_search {
+        color: $color-text3;
+      }
+    }
   }
 }

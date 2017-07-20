@@ -6,7 +6,7 @@
     .container {
       position: relative;
       z-index: 10;
-      min-height: 760px;
+      min-height: 727px;
     }
   }
   img {
@@ -235,6 +235,7 @@
       position: relative;
       z-index: 5;
       opacity: .6;
+      @include css3-prefix('transform', 'scale(.8)');
       a {
         color: $color-text4;
         &:hover,
@@ -251,11 +252,12 @@
       &:first-child {
         z-index: 10;
         opacity: 1;
+        transform: scale(1);
+        @include css3-prefix('transform', 'scale(1)');
       }
       &:nth-child(2),
       &:nth-child(3) {
         position: absolute;
-        margin: 0 52px;
         .study-desc {
           overflow: hidden;
           max-height: 60px;
@@ -644,3 +646,100 @@
       pointer-events: none;
     }
   }
+.case-desktop {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  text-align: left;
+  .swiper-slide {
+    opacity: .7;
+    @include css3-prefix('transform', 'scale(.7)');
+    &.swiper-slide-active {
+      opacity: 1;
+      @include css3-prefix('transform', 'scale(1);');
+    }
+  }
+}
+.case-mobile {
+  display: none;
+  max-width: 440px;
+  margin-bottom: 50px;
+  .box {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: left;
+    a {
+      color: $color-text4;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+  .swiper-pagination {
+    display: none;
+  }
+    .swiper-pagination-bullet {
+      width: 13px;
+      height: 13px;
+    }
+  &.swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 5px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 0;
+    width: 40px;
+    height: 100%;
+    margin-top: 0;
+  }
+  .swiper-pagination-bullet-active {
+    background: #79a22e;
+  }
+  .study-img-wrap {
+    display: none;
+  }
+  .study-logo-link {
+    display: none;
+  }
+  .study-left-box {
+    padding: 10px 15px;
+  }
+  .study-description {
+    line-height: 1;
+  }
+  .study-logo-wrap {
+    min-height: auto;
+    padding-right: 145px;
+  }
+  .study-logo {
+    max-width: 130px;
+    height: auto;
+    line-height: 1;
+  }
+  .study-info-box {
+    position: relative;
+    float: none;
+    width: 100%;
+    padding: 10px 0 10px;
+  }
+  .study-results {
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    left: auto;
+    right: 10px;
+    bottom: auto;
+    max-width: 120px;
+  }
+  .study-results-box {
+    margin-left: 0;
+  }
+  .study-tag {
+    display: none;
+  }
+  .study-desc-box {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+}

@@ -149,6 +149,21 @@
                     <?php
                     }
                     wp_reset_query();
+
+                    if ($new_query->have_posts()) {
+                        echo '<div class="swiper-container case-mobile">
+                                 <div class="swiper-wrapper">';
+                                while ($new_query->have_posts()) {
+                                    $new_query->the_post();
+                                    get_template_part('loop', 'swiper');
+                                }
+                              echo '</div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-next swiper-button-white"></div>
+                                <div class="swiper-button-prev swiper-button-white"></div>                          
+                            </div>';
+                    }
+                    wp_reset_query();
                 ?>
                 <?php
                     if ($case_studies_button && is_array($case_studies_button)) {

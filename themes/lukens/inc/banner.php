@@ -1,14 +1,20 @@
 <?php
-if (is_tax('study_category')) {
+$post_id = get_the_id();
+if ( is_tax('study_category') || is_post_type_archive('study') ) {
+    $id = 10;
+} elseif ( is_singular('study') ) {
+    $short_info = get_the_title($post_id);
+    $bg_img = get_field('page_banner_image', $id);
     $id = 10;
 } else {
-    $id = get_the_id();
+    $id = $post_id;
 }
 
 $title = is_search() ? __('Search') : get_field('page_heading', $id);
-$short_info = get_field('page_short_info', $id);
+$short_info = ($short_info) ? $short_info : get_field('page_short_info', $id);
+if (is_search()) $short_info = false;
 $color = get_field('page_overlay', $id);
-$bg_img = get_field('page_image', $id);
+$bg_img = ($bg_img) ? $bg_img : get_field('page_image', $id);
 
 ?>
     <?php // if ($title || $short_info || $color || $bg_img) { ?>

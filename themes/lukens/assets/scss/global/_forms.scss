@@ -288,3 +288,20 @@ select {
     }
   }
 }
+.search-page-box {
+  margin-bottom: 25px;
+  .widget_search {
+    &:after {
+      top: 12px;
+      font-size: 16px;
+    }
+    .search-field {
+      max-width: 100%;
+      font-size: 18px;
+      line-height: 36px;
+    }
+    .search-submit {
+      height: 36px;
+    }
+  }
+}

@@ -39,6 +39,7 @@ jQuery(document).ready(function($) {
             $(window).on('load resize', function() {
                 if ($('.study-list').length) {
                     var maxHeight = 0,
+                        wrap = $('.study-box'),
                         box = $('.study-left-box'),
                         imgBox = $('.study-img-wrap');
 
@@ -49,8 +50,16 @@ jQuery(document).ready(function($) {
                                 maxHeight = $(this).outerHeight();
                             }
                             imgBox.css('height', maxHeight);
+                            wrap.css('height', '');
+                        } else if ($(window).width() < 767 && $(window).width() > 640) {
+                            if ( $(this).outerHeight() > maxHeight ) {
+                                maxHeight = $(this).outerHeight();
+                            }
+                            imgBox.css('height', '');
+                            wrap.css('height', maxHeight + 180);
                         } else {
-                            imgBox.css('height', ' ');
+                            imgBox.css('height', '');
+                            wrap.css('height', '');
                         }
                     });
                 }
@@ -91,6 +100,13 @@ jQuery(document).ready(function($) {
                 }
             });
 
+            //services links
+            $('.link-box').on('click', function() {
+                var link = $(this).find('.services-box').find('a').attr('href');
+
+                window.location = link;
+            });
+
             //title for CF7
             $(window).on('load', function() {
                 var field = $('[placeholder]');
@@ -127,6 +143,61 @@ jQuery(document).ready(function($) {
                 removalDelay: 300,
                 mainClass: 'my-mfp-zoom-in'
             });
+
+        //for case study slider
+            //for desktop
+            $(window).on('load', function() {
+                if ($('.recent-case-post')) {
+                    var wrap = $('.recent-case-post'),
+                        box = wrap.find('li'),
+                        imgBox = wrap.find('.study-img-wrap'),
+                        contentBox = wrap.find('.study-left-box');
+
+                        box.eq(0).addClass('active');
+
+                        box.on('click', function (e) {
+                            if (!($(this).hasClass('active'))) {
+                                e.preventDefault();
+                                wrap.prepend($(this));
+                                contentBox.each(function (i) {
+                                    if ($(window).width() > 767) {
+                                        var maxHeight = 0;
+                                        maxHeight = contentBox.eq(i).outerHeight();
+                                        imgBox.eq(i).css('height', maxHeight);
+                                    }
+                                });
+                                box.removeClass('active');
+                                $(this).addClass('active');
+                            }
+                        })
+                }
+            })
+            //for mobile
+            $(window).on('load resize', function() {
+                if ($('.case-mobile').length) {
+                    var maxHeight = 0,
+                        box = $('.case-mobile').find('.study-box');
+
+                    box.each(function () {
+                        if ($(this).outerHeight() > maxHeight) {
+                            maxHeight = $(this).outerHeight();
+                        }
+                    });
+                    box.css('height', maxHeight);
+                }
+            })
+            $(window).on('load', function() {
+                if ($('.case-mobile').length) {
+                    var swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true,
+                        nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev',
+                        spaceBetween: 30,
+                        loop: true
+                    })
+                }
+            })
         })
 
     });

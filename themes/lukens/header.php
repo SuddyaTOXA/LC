@@ -43,6 +43,10 @@
                     <span></span>
                 </div>
 
+                <div class="header-search-box">
+                    <a href="<?= home_url(); ?>/?s=" ><span class="icon-icon_search"></span></a>
+                </div>
+
                 <?php wp_nav_menu(array(
                     'theme_location'  => 'main-menu',
                     'menu'            => 'Main Menu',
@@ -63,16 +67,18 @@
                             'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                             'depth'           => 2
                         )); ?>
-                        <div class="search-box">
-                            <div class="widget_search">
-                                <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-                                    <label>
-                                        <input type="search" class="search-field" placeholder="Search …" value="<?php esc_attr_e(trim(get_search_query())); ?>" name="s" title="Search …">
-                                    </label>
-                                    <input type="submit" class="search-submit" value="Search">
-                                </form>
+                        <?php /*
+                            <div class="search-box">
+                                <div class="widget_search">
+                                    <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+                                        <label>
+                                            <input type="search" class="search-field" placeholder="Search …" value="<?php esc_attr_e(trim(get_search_query())); ?>" name="s" title="Search …">
+                                        </label>
+                                        <input type="submit" class="search-submit" value="Search">
+                                    </form>
+                                </div>
                             </div>
-                        </div>
+                        */ ?>
                     </div>
                     <div class="mobile-menu-overlay"></div>
                 </div>
