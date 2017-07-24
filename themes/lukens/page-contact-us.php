@@ -53,7 +53,7 @@ get_header();
                                             <h3 class="location-title">' . $loc['title'] . '</h3>
                                             <div class="location">
                                                 <p>' . $loc['address'] . '</p>
-                                                <span>Phone: <a href="tel:+' . $loc['phone'] . '" title="' . $loc['phone'] . '">' . $loc['phone'] . '</a></span>
+                                                <span>Phone: <a href="tel:+1' .  preg_replace('/[^0-9]/', '', $loc['phone']) . '" title="' . $loc['phone'] . '">' . $loc['phone'] . '</a></span>
                                             </div>
                                         </div>
                                     </li>';

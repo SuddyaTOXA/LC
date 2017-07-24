@@ -90,6 +90,27 @@ img {
     &:last-child {
       margin-bottom: 0;
     }
+     &.green {
+       color: #79a22e;
+     }
+     &.blue {
+       color: #2a425a;
+     }
+     &.white {
+       color: #ffffff;
+     }
+     &.grey {
+        color: #bebebe;
+      }
+     &.small-text {
+       font-size: 14px;
+     }
+     &.big-text {
+       font-size: 23px;
+     }
+     &.biggest-text {
+       font-size: 28px;
+     }
   }
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
@@ -197,7 +218,24 @@ img {
     font-size: 23px;
     word-spacing: .1em;
     line-height: 1.17;
-
+  }
+  .section-title {
+    margin-bottom: 8px;
+    display: inline-block;
+    font-family: 'Hikou Rough';
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: -.01em;
+    color: $color-text4;
+    text-transform: uppercase;
+    &.left {
+      text-align: left;
+    }
+    .inverse &,
+    &.white {
+      color: $white;
+    }
   }
 }
 /*----------------------------------------------------------------------------------*/

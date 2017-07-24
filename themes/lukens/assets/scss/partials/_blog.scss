@@ -55,7 +55,8 @@
         }
       }
 
-        .post-title {
+        .post-title,
+        h2.post-title {
           margin-bottom: 11px;
           font-family: $font-main;
           font-size: 31px;
@@ -165,7 +166,8 @@
       opacity: 0;
     }
   }
-    .blog-title {
+    .blog-title,
+    h2.blog-title {
       margin-bottom: 20px;
       font-family: $font-main;
       font-size: 45px;

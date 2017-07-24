@@ -16,9 +16,11 @@
     }
   }
 }
-.person-name {
+.person-name,
+h2.person-name {
   margin-bottom: 6px;
   font-size: 31px;
+  font-family: $font-main;
   font-weight: 300;
   font-style: italic;
   line-height: 1;
@@ -26,6 +28,7 @@
     font-weight: 500;
   }
 }
+
 .careers-sub-title {
   font-size: 31px;
   font-weight: 500;

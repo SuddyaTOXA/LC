@@ -41,23 +41,26 @@
     .no-js &,
     html:not(.js) &,
     .single-service &,
-    .page-template-page-service & {
+    .page-template-page-services & {
       color: $color-text3;
     }
     color: $color-nav;
   }
 }
-  .single-study .main-nav .menu-item-24 > a,
+  .single-study .main-nav .menu-item-308 > a,
+  .tax-study_category .main-nav .menu-item-308 > a,
   .single-post .main-nav .menu-item-23 > a {
     color: $color-nav;
   }
   .single-service .main-nav .menu-item-25 > a,
   .single-service .scrolling .main-nav .menu-item-25 > a,
-  .single-study .scrolling .main-nav .menu-item-24 > a,
+  .single-study .scrolling .main-nav .menu-item-308 > a,
+  .tax-study_category .scrolling .main-nav .menu-item-308 > a,
   .single-post .scrolling .main-nav .menu-item-23 > a {
     color: $color-text3;
   }
-  .single-study .footer-menu > .menu-item-34 > a,
+  .single-study .footer-menu > .menu-item-309 > a,
+  .tax-study_category .footer-menu > .menu-item-309 > a,
   .single-post .footer-menu > .menu-item-33 > a,
   .single-service .footer-menu > .menu-item-35 > a {
     color: $color-text3;
@@ -109,7 +112,8 @@
     content: "\f106";
   }
 }
-.single-study .mobile-menu > .menu-item-24 > a,
+.single-study .mobile-menu > .menu-item-308 > a,
+.tax-study_category .mobile-menu > .menu-item-308 > a,
 .single-post .mobile-menu > .menu-item-23 > a,
 .single-service .mobile-menu > .menu-item-25 > a {
   color: $color-text3;

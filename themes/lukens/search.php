@@ -14,12 +14,17 @@
                     </form>
                 </div>
             </div>
-            <h2 class="section-title line left"><?php
-                if ( $search_keys = trim( get_search_query() ) )
-                    echo __('Results for').' "'.$search_keys.'"';
-                else 
-                    _e("No keywords entered");
-            ?></h2>
+            <?php
+                $search_keys = trim( get_search_query() );
+
+                if ($search_keys) {
+                    echo '<h2 class="section-title line left">';
+                    echo __('Results for') . ' "' . $search_keys . '"';
+                    echo '</h2>';
+//                else
+//                    _e("No keywords entered");
+                }
+            ?>
 
             <?php if ($search_keys && have_posts()) {
 
@@ -33,7 +38,7 @@
                 wp_pagenavi();
 
                 } else {
-                    echo "<p class='no-results'>Sorry, no posts found...</p>";
+                   //echo "<p class='no-results'>Sorry, no posts found...</p>";
                 }
             ?>
         </div>

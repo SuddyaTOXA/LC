@@ -13,6 +13,7 @@
     $case_studies_content = get_field('case_studies_content');
     $case_studies_button = get_field('case_studies_button');
 
+
     $the_latest_title = get_field('the_latest_title');
     $the_latest_content = get_field('the_latest_content');
     $the_latest_button = get_field('the_latest_button');
@@ -71,24 +72,51 @@
                 if ($our_services_content) {
                     echo '<div class="content-wrap"><div class="content">'. $our_services_content .'</div></div>';
                 }
-                if( have_rows('services') ):
-                    echo '<ul class="our-services-list">';
-                    while ( have_rows('services') ) : the_row(); ?>
-                        <li>
-                            <div class="our-services-box">
-                                <div class="our-services-icon-wrap">
-                                    <span class="our-services-icon <?= the_sub_field('icon') ?>"></span>
-                                </div>
-                                <div class="our-services-title-wrap">
-                                    <h3 class="our-services-title"><?= the_sub_field('title') ?></h3>
-                                </div>
-                                <div class="content"><p><?= the_sub_field('content') ?></p></div>
-                            </div>
-                        </li>
-                    <?php endwhile;
-                    echo '</ul>';
-                endif;
-                if ($our_services_bottom_text) {
+
+            global $wp_query;
+
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+            $args = array(
+                'post_type'     => 'service',
+                'post_status'   => 'publish',
+                'orderby'       => 'date',
+                'posts_per_page' => -1,
+                'order'         => 'ASC',
+                'paged'         => $paged,
+            );
+            $new_query = new WP_Query( $args );
+
+            if ($new_query->have_posts()) {
+                echo '<ul class="our-services-list">';
+                while ($new_query->have_posts()) {
+                    $new_query->the_post();
+                    $our_services_icon = get_field('icon');
+                    echo '<li>
+                                <div class="our-services-box">
+                                    <div class="our-services-icon-wrap">';
+                    if ($our_services_icon) {
+                        echo '<span class="our-services-icon ' . $our_services_icon . '"></span>';
+                    }
+                    echo '</div>';
+                    if (get_the_title()) {
+                        echo '<div class="our-services-title-wrap">
+                                    <a href="'. get_the_permalink() .'" title="'. get_the_title() .'">
+                                        <span class="our-services-title">' . get_the_title() . '</span>
+                                    </a>                                    
+                                 </div>';
+                    }
+                    if (the_excerpt()) {
+                        echo '<div class="content">' . the_excerpt() . '</div>';
+                    }
+                    echo '</div>
+                            </li>';
+                }
+                echo '</ul>';
+            }
+            wp_reset_query();
+
+
+            if ($our_services_bottom_text) {
                     echo '<span class="our-services-bottom-text">'. $our_services_bottom_text .'</span>';
                 }
             ?>

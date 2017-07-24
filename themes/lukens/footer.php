@@ -36,7 +36,7 @@
                                     echo '<p>'. get_sub_field('address') .'</p>';
                                 }
                                 if (get_sub_field('phone')) {
-                                    echo '<a href="tel:+'. get_sub_field('phone') .'">'. get_sub_field('phone') .'</a>';
+                                    echo '<a href="tel:+1'. preg_replace('/[^0-9]/', '', get_sub_field('phone')) .'">'. get_sub_field('phone') .'</a>';
                                 }
                                 ?>
                             </div >

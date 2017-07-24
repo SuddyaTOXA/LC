@@ -268,6 +268,20 @@ img {
     margin-bottom: 26px; }
     .content *:last-child {
       margin-bottom: 0; }
+    .content *.green {
+      color: #79a22e; }
+    .content *.blue {
+      color: #2a425a; }
+    .content *.white {
+      color: #ffffff; }
+    .content *.grey {
+      color: #bebebe; }
+    .content *.small-text {
+      font-size: 14px; }
+    .content *.big-text {
+      font-size: 23px; }
+    .content *.biggest-text {
+      font-size: 28px; }
   .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
     margin-bottom: 15px;
     font-family: 'Hikou Rough';
@@ -377,6 +391,20 @@ img {
     font-size: 23px;
     word-spacing: .1em;
     line-height: 1.17; }
+  .content .section-title {
+    margin-bottom: 8px;
+    display: inline-block;
+    font-family: 'Hikou Rough';
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: -.01em;
+    color: #2a425a;
+    text-transform: uppercase; }
+    .content .section-title.left {
+      text-align: left; }
+    .inverse .content .section-title, .content .section-title.white {
+      color: #ffffff; }
 
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------WRAPPER--------------------------------------*/
@@ -1757,38 +1785,41 @@ select {
   .main-nav .current-menu-item > a,
   .main-nav .current-menu-ancestor > a {
     color: #00334E; }
-    .home .main-nav a:focus, .scrolling .main-nav a:focus, .no-js .main-nav a:focus, html:not(.js) .main-nav a:focus, .single-service .main-nav a:focus, .page-template-page-service .main-nav a:focus, .home
+    .home .main-nav a:focus, .scrolling .main-nav a:focus, .no-js .main-nav a:focus, html:not(.js) .main-nav a:focus, .single-service .main-nav a:focus, .page-template-page-services .main-nav a:focus, .home
     .main-nav a:hover, .scrolling
     .main-nav a:hover, .no-js
     .main-nav a:hover, html:not(.js)
     .main-nav a:hover, .single-service
-    .main-nav a:hover, .page-template-page-service
+    .main-nav a:hover, .page-template-page-services
     .main-nav a:hover, .home
     .main-nav .current-menu-item > a, .scrolling
     .main-nav .current-menu-item > a, .no-js
     .main-nav .current-menu-item > a, html:not(.js)
     .main-nav .current-menu-item > a, .single-service
-    .main-nav .current-menu-item > a, .page-template-page-service
+    .main-nav .current-menu-item > a, .page-template-page-services
     .main-nav .current-menu-item > a, .home
     .main-nav .current-menu-ancestor > a, .scrolling
     .main-nav .current-menu-ancestor > a, .no-js
     .main-nav .current-menu-ancestor > a, html:not(.js)
     .main-nav .current-menu-ancestor > a, .single-service
-    .main-nav .current-menu-ancestor > a, .page-template-page-service
+    .main-nav .current-menu-ancestor > a, .page-template-page-services
     .main-nav .current-menu-ancestor > a {
       color: #DB9C39; }
 
-.single-study .main-nav .menu-item-24 > a,
+.single-study .main-nav .menu-item-308 > a,
+.tax-study_category .main-nav .menu-item-308 > a,
 .single-post .main-nav .menu-item-23 > a {
   color: #00334E; }
 
 .single-service .main-nav .menu-item-25 > a,
 .single-service .scrolling .main-nav .menu-item-25 > a,
-.single-study .scrolling .main-nav .menu-item-24 > a,
+.single-study .scrolling .main-nav .menu-item-308 > a,
+.tax-study_category .scrolling .main-nav .menu-item-308 > a,
 .single-post .scrolling .main-nav .menu-item-23 > a {
   color: #DB9C39; }
 
-.single-study .footer-menu > .menu-item-34 > a,
+.single-study .footer-menu > .menu-item-309 > a,
+.tax-study_category .footer-menu > .menu-item-309 > a,
 .single-post .footer-menu > .menu-item-33 > a,
 .single-service .footer-menu > .menu-item-35 > a {
   color: #DB9C39; }
@@ -1831,7 +1862,8 @@ select {
   .mobile-menu.open:after {
     content: "\f106"; }
 
-.single-study .mobile-menu > .menu-item-24 > a,
+.single-study .mobile-menu > .menu-item-308 > a,
+.tax-study_category .mobile-menu > .menu-item-308 > a,
 .single-post .mobile-menu > .menu-item-23 > a,
 .single-service .mobile-menu > .menu-item-25 > a {
   color: #DB9C39;
@@ -1942,7 +1974,7 @@ select {
   .footer-menu > .current-menu-item > a,
   .footer-menu > li > a:hover,
   .footer-menu > li > a:focus {
-    color: #DB9C39;
+    color: #DB9C39 !important;
     text-decoration: none; }
 
 .address-list {
@@ -2178,6 +2210,10 @@ select {
   display: table;
   width: 100%;
   min-height: 34px; }
+  .our-services-title-wrap a:hover, .our-services-title-wrap a:focus {
+    text-decoration: none; }
+    .our-services-title-wrap a:hover .our-services-title, .our-services-title-wrap a:focus .our-services-title {
+      color: #DB9C39; }
 
 .our-services-title {
   display: table-cell;
@@ -2190,7 +2226,13 @@ select {
   text-transform: uppercase;
   color: #2a425a;
   line-height: 1.25;
-  vertical-align: middle; }
+  vertical-align: middle;
+  -webkit-transition: 0.2s;
+  -khtml-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s; }
 
 .our-services-bottom-text {
   font-size: 14px;
@@ -2901,7 +2943,8 @@ select {
     margin-top: 17px;
     margin-left: 3px; }
 
-.post-title {
+.post-title,
+h2.post-title {
   margin-bottom: 11px;
   font-family: "Lato", Arial, sans-serif;
   font-size: 31px;
@@ -3022,7 +3065,8 @@ select {
     transform: translate(-50%, -50%);
     opacity: 0; }
 
-.blog-title {
+.blog-title,
+h2.blog-title {
   margin-bottom: 20px;
   font-family: "Lato", Arial, sans-serif;
   font-size: 45px;
@@ -3868,13 +3912,17 @@ a.study-title,
   .section-about .section-title.line:after {
     bottom: 5px; }
 
-.person-name {
+.person-name,
+h2.person-name {
   margin-bottom: 6px;
   font-size: 31px;
+  font-family: "Lato", Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
   line-height: 1; }
-  .person-name b, .person-name strong {
+  .person-name b, .person-name strong,
+  h2.person-name b,
+  h2.person-name strong {
     font-weight: 500; }
 
 .careers-sub-title {
@@ -3973,14 +4021,16 @@ a.study-title,
     .section-blog-list .section-title.line:after {
       border-bottom: 12px; }
 
-  .post-title {
+  .post-title,
+  h2.post-title {
     font-size: 29px; }
 
   .section-blog {
     padding-top: 60px;
     padding-bottom: 100px; }
 
-  .blog-title {
+  .blog-title,
+  h2.blog-title {
     font-size: 40px; }
 
   .share-btn-list > li a .fa {
@@ -4039,6 +4089,10 @@ a.study-title,
     font-size: 22px; }
   .content h6 {
     font-size: 20px; }
+  .content.big-text {
+    font-size: 21px; }
+  .content.biggest-text {
+    font-size: 26px; }
 
   .case-post-nav {
     width: 100%; }
@@ -4169,7 +4223,8 @@ a.study-title,
   .content-wrap .content {
     font-size: 19px; }
 
-  .section-title {
+  .section-title,
+  h2.section-title {
     font-size: 38px !important; }
 
   .section-our-services .section-title.line:after {
@@ -4198,6 +4253,12 @@ a.study-title,
     .content blockquote {
       padding-top: 55px;
       font-size: 19px; }
+    .content.small-text {
+      font-size: 13px; }
+    .content.big-text {
+      font-size: 19px; }
+    .content.biggest-text {
+      font-size: 24px; }
 
   .location-list {
     text-align: left; }
@@ -4257,7 +4318,8 @@ a.study-title,
     font-size: 16px;
     text-align: left; }
 
-  .post-title {
+  .post-title,
+  h2.post-title {
     margin-bottom: 4px;
     font-size: 26px; }
 
@@ -4280,7 +4342,8 @@ a.study-title,
   .blog-info-box {
     margin-bottom: 10px; }
 
-  .blog-title {
+  .blog-title,
+  h2.blog-title {
     font-size: 28px; }
 
   .share-btn-list > li a .fa {

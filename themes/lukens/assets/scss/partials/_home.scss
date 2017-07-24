@@ -189,6 +189,15 @@
           display: table;
           width: 100%;
           min-height: 34px;
+          a {
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              .our-services-title {
+                color: $color-text3;
+              }
+            }
+          }
         }
           .our-services-title {
             display: table-cell;
@@ -202,6 +211,7 @@
             color: $color-text4;
             line-height: 1.25;
             vertical-align: middle;
+            @include transition($transition-link);
           }
     .our-services-bottom-text {
       font-size: 14px;

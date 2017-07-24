@@ -36,7 +36,7 @@
   > .current-menu-item > a,
   > li > a:hover,
   > li > a:focus {
-    color: $color-text3;
+    color: $color-text3 !important;
     text-decoration: none;
   }
 }
